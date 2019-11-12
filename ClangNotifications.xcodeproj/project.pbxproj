@@ -33,7 +33,6 @@
 		978C5B2323788C4C001EDA9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C5B2223788C4C001EDA9D /* LoginViewController.swift */; };
 		978C5B2623788C67001EDA9D /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C5B2523788C67001EDA9D /* PollViewController.swift */; };
 		978C5B2D23789E77001EDA9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 978C5B2C23789E77001EDA9D /* GoogleService-Info.plist */; };
-		97AC534D2378A26600877806 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AC534C2378A26600877806 /* PushNotificationManager.swift */; };
 		F472ADD33C1F996082806D75 /* Pods_ClangNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03406C46DC67DA9B816A33D2 /* Pods_ClangNotifications.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,7 +94,6 @@
 		978C5B2523788C67001EDA9D /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		978C5B292378917C001EDA9D /* ClangNotificationsDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClangNotificationsDemoApp.entitlements; sourceTree = "<group>"; };
 		978C5B2C23789E77001EDA9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		97AC534C2378A26600877806 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		C58AA6E99C6488185F192B6D /* Pods-ClangNotifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClangNotifications.debug.xcconfig"; path = "Target Support Files/Pods-ClangNotifications/Pods-ClangNotifications.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -220,7 +218,6 @@
 				9738BD962378881B00AE0C08 /* Assets.xcassets */,
 				9738BD982378881B00AE0C08 /* LaunchScreen.storyboard */,
 				9738BD9B2378881B00AE0C08 /* Info.plist */,
-				97AC534C2378A26600877806 /* PushNotificationManager.swift */,
 			);
 			path = ClangNotificationsDemoApp;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97AC534D2378A26600877806 /* PushNotificationManager.swift in Sources */,
 				978C5B2323788C4C001EDA9D /* LoginViewController.swift in Sources */,
 				9738BD922378881A00AE0C08 /* ViewController.swift in Sources */,
 				9738BD8E2378881A00AE0C08 /* AppDelegate.swift in Sources */,

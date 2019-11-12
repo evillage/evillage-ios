@@ -18,6 +18,7 @@ public class Clang {
 
     let accountInteractor: AccountInteractorProtocol = AccountInteractor()
     let logActionInteractor: LogActionInteractorProtocol = LogActionInteractor()
+    let tokenInteractor: TokenInteractorProtocol = TokenInteractor()
     
     public init() {}
     
@@ -28,5 +29,13 @@ public class Clang {
     public func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Swift.Void) {
         logActionInteractor.logEvent(event: event, data: data, completion: completion)
         
+    }
+    
+    public func logNotification(notificationId: String, actionId: String, completion: @escaping (Error?) -> Swift.Void) {
+        logActionInteractor.logNotificationAction(notificationId: notificationId, actionId: actionId, completion: completion)
+    }
+    
+    public func updateTokenOnServer(firebaseToken: String, completion: @escaping (Error?) -> Swift.Void) {
+        tokenInteractor.sendTokenToServer(firebaseToken: firebaseToken, completion: completion)
     }
 }

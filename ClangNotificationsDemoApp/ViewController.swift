@@ -28,28 +28,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func registerAccount(_ sender: UIButton) {
-        
-        let pushManager = PushNotificationManager()
-        pushManager.registerForPushNotifications()
-        
-//        Clang().registerAccount() { (userId, error) in
-//            if error != nil {
-//                print(error!)
-//                DispatchQueue.main.async {
-//                let alertController = UIAlertController(title: "oopsie!", message: error?.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-//                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//                self.present(alertController, animated: true, completion: nil)
-//                }
-//                return
-//            } else {
-//                DispatchQueue.main.async {
-//                let alertController = UIAlertController(title: "Be healthy, here an 🍎 for you", message: userId, preferredStyle: UIAlertController.Style.alert)
-//                alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-//                self.present(alertController, animated: true, completion: nil)
-//                }
-//                return
-//            }
-//        }
+        let alertController = UIAlertController(title: "Thanks for registering with us", message: "🤩", preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func shareLocation(_ sender: UIButton) {

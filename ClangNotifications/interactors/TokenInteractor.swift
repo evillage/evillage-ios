@@ -21,9 +21,11 @@ class TokenInteractor: TokenInteractorProtocol {
     func sendTokenToServer(firebaseToken: String, completion: @escaping (Error?) -> Swift.Void) {
         
         let userId = storageService.loadUserId()
-        let tokenRequest = SaveTokenRequest(userId: userId!, token: firebaseToken)
+        if userId != nil {
+         let tokenRequest = SaveTokenRequest(userId: userId!, token: firebaseToken)
         
-        serverService.saveToken(saveToken: tokenRequest) { (error) in
+        
+         serverService.saveToken(saveToken: tokenRequest) { (error) in
             if error != nil {
                 print(error!)
                 completion(error)
@@ -32,6 +34,7 @@ class TokenInteractor: TokenInteractorProtocol {
                 completion(nil)
                 return
             }
+        }
         }
     }
 }

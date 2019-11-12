@@ -24,12 +24,12 @@ class StorageService: StorageServiceProtocol {
     }
     
     func loadUserId() -> String? {
-      if let receivedData = KeyChainService.load(key: "clang_user_id") {
-          let result = receivedData.to(type: String.self)
-          print("result: ", result)
-          return result
-      }
-        return nil
+//      if let receivedData = KeyChainService.load(key: "clang_user_id") {
+//          let result = receivedData.to(type: String.self)
+//          print("result: ", result)
+//          return result
+//      }
+        return "5877f788-e8b8-4d41-ab4e-8872696772f4"
     }
     
     func getDeviceId() -> String? {
