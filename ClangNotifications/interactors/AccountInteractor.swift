@@ -23,15 +23,15 @@ class AccountInteractor: AccountInteractorProtocol {
         guard let deviceId = storageService.getDeviceId() else { return  }
         let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: firebaseToken)
         
-        //todo: store userId in a keychain
-        serverService.registerAccount(registerAccount: registerAccountModel) { (userId, error) in
+        serverService.registerAccount(registerAccount: registerAccountModel) { (registerAccountResponse, error) in
             if error != nil {
                 print(error!)
                 completion(nil, error)
                 return
             } else {
-                self.storageService.saveUserId(userId: userId!)
-                completion(userId, nil)
+                self.storageService.saveUserId(userId: registerAccountResponse?.id ?? "")
+                self.storageService.saveUserSecret(secret: registerAccountResponse?.secret ?? "")
+                completion(registerAccountResponse?.id, nil)
                 return
             }
         }

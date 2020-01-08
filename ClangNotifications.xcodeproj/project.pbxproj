@@ -81,7 +81,7 @@
 		9738BD7E237885DF00AE0C08 /* LogActionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogActionInteractor.swift; sourceTree = "<group>"; };
 		9738BD7F237885DF00AE0C08 /* AccountInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountInteractor.swift; sourceTree = "<group>"; };
 		9738BD83237885EB00AE0C08 /* Clang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Clang.swift; sourceTree = "<group>"; };
-		9738BD85237886BD00AE0C08 /* ClangNotifications.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClangNotifications.podspec; sourceTree = "<group>"; };
+		9738BD85237886BD00AE0C08 /* ClangNotifications.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ClangNotifications.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9738BD8B2378881A00AE0C08 /* ClangNotificationsDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClangNotificationsDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9738BD8D2378881A00AE0C08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9738BD8F2378881A00AE0C08 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };

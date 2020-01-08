@@ -10,8 +10,10 @@ import Foundation
 
 class RegisterAccountResponse: Codable {
     var id: String
+    var secret: String
     
-    init(id: String) {
+    init(id: String, secret: String) {
       self.id = id
+      self.secret = secret
     }
 }
