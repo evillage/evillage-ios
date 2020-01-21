@@ -28,6 +28,7 @@
 		9738BD952378881A00AE0C08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9738BD932378881A00AE0C08 /* Main.storyboard */; };
 		9738BD972378881B00AE0C08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9738BD962378881B00AE0C08 /* Assets.xcassets */; };
 		9738BD9A2378881B00AE0C08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9738BD982378881B00AE0C08 /* LaunchScreen.storyboard */; };
+		9769A5E323D5F55700F2DB4C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769A5E223D5F55700F2DB4C /* Environment.swift */; };
 		978C5B1C23788AEE001EDA9D /* ClangNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9738BD5F2378849600AE0C08 /* ClangNotifications.framework */; };
 		978C5B1D23788AEE001EDA9D /* ClangNotifications.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9738BD5F2378849600AE0C08 /* ClangNotifications.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		978C5B2323788C4C001EDA9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978C5B2223788C4C001EDA9D /* LoginViewController.swift */; };
@@ -90,10 +91,12 @@
 		9738BD962378881B00AE0C08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9738BD992378881B00AE0C08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9738BD9B2378881B00AE0C08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9769A5E223D5F55700F2DB4C /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		978C5B2223788C4C001EDA9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		978C5B2523788C67001EDA9D /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		978C5B292378917C001EDA9D /* ClangNotificationsDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClangNotificationsDemoApp.entitlements; sourceTree = "<group>"; };
 		978C5B2C23789E77001EDA9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97FE244623D5F0DE002359FB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C58AA6E99C6488185F192B6D /* Pods-ClangNotifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClangNotifications.debug.xcconfig"; path = "Target Support Files/Pods-ClangNotifications/Pods-ClangNotifications.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +165,7 @@
 		9738BD612378849600AE0C08 /* ClangNotifications */ = {
 			isa = PBXGroup;
 			children = (
+				9769A5E123D5F53F00F2DB4C /* Config */,
 				9738BD83237885EB00AE0C08 /* Clang.swift */,
 				9738BD7C237885DF00AE0C08 /* interactors */,
 				9738BD75237885D300AE0C08 /* services */,
@@ -220,6 +224,15 @@
 				9738BD9B2378881B00AE0C08 /* Info.plist */,
 			);
 			path = ClangNotificationsDemoApp;
+			sourceTree = "<group>";
+		};
+		9769A5E123D5F53F00F2DB4C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				97FE244623D5F0DE002359FB /* Config.xcconfig */,
+				9769A5E223D5F55700F2DB4C /* Environment.swift */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		978C5B2123788C3B001EDA9D /* login */ = {
@@ -428,6 +441,7 @@
 				9738BD71237885BF00AE0C08 /* RegisterAccountRequest.swift in Sources */,
 				9738BD81237885DF00AE0C08 /* LogActionInteractor.swift in Sources */,
 				9738BD84237885EB00AE0C08 /* Clang.swift in Sources */,
+				9769A5E323D5F55700F2DB4C /* Environment.swift in Sources */,
 				9738BD7A237885D300AE0C08 /* KeychainService.swift in Sources */,
 				9738BD73237885BF00AE0C08 /* SaveTokenRequest.swift in Sources */,
 				9738BD7B237885D300AE0C08 /* ServerService.swift in Sources */,
@@ -479,6 +493,7 @@
 /* Begin XCBuildConfiguration section */
 		9738BD652378849600AE0C08 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -542,6 +557,7 @@
 		};
 		9738BD662378849600AE0C08 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -599,7 +615,7 @@
 		};
 		9738BD682378849600AE0C08 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C58AA6E99C6488185F192B6D /* Pods-ClangNotifications.debug.xcconfig */;
+			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -625,7 +641,7 @@
 		};
 		9738BD692378849600AE0C08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7BFD3C058E7A048D494A69F6 /* Pods-ClangNotifications.release.xcconfig */;
+			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

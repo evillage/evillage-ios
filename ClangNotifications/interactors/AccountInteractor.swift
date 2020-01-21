@@ -21,7 +21,7 @@ class AccountInteractor: AccountInteractorProtocol {
     func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Swift.Void) {
         
         guard let deviceId = storageService.getDeviceId() else { return  }
-        let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: firebaseToken)
+        let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: firebaseToken, customerId: Environment.customerId)
         
         serverService.registerAccount(registerAccount: registerAccountModel) { (registerAccountResponse, error) in
             if error != nil {

@@ -1,0 +1,20 @@
+//
+//  Config.xcconfig
+//  ClangNotifications
+//
+//  Created by Tetiana Padalko on 20/01/2020.
+//  Copyright © 2020 Worth Internet Systems. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-ClangNotifications/Pods-ClangNotifications.debug.xcconfig"
+#include "Pods/Target Support Files/Pods-ClangNotifications/Pods-ClangNotifications.release.xcconfig"
+
+// Server URL
+ROOT_URL = https:/$()/firebase-demo.test.worth.systems
+// App Settings
+CUSTOMER_ID = EvillageDemo
+
+
