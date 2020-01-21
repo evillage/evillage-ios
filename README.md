@@ -10,6 +10,13 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 * Open .xcworkspace file in Xcode and you're ready for using it
 * Run the app on emulator or connect an IOS device (supported IOS is 12 and 13)
 
+### Customer Id set up ###
+Customer id as a unique identifier for an app which uses the library and set in the config file for build:
+* Go to _your_workspace/ClangNotifications/Config.xcconfig_ and set _CUSTOMER_ID = your_application_unique_identifier_
+* In the application directory (not library) go to _info.plist_ and by using variable substitution in the _.plist_ 
+for the appropriate keys, substituting our custom variables from the xcconfig files:
+**CUSTOMER_ID** as a key and  value set to **$(CUSTOMER_ID)** which will be read from env config file.
+
 ### Links ###
 
 * [Firebase project](https://console.firebase.google.com/project/test-a04ac/overview) (for access ask oboekesteijn@worth.systems or tpadalko@worth.systems)
