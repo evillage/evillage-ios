@@ -21,16 +21,15 @@ protocol ServerServiceProtocol: class {
   func logEvent(eventLog: EventLogRequest, completion: @escaping (Error?) -> Swift.Void)
 }
 
-/// Tag to used in debug prints for easy search in Xcode debug console
-private let logTag: String = "\(ServerService.self)"
-
 class ServerService: ServerServiceProtocol {
-
   private let URLRegister = "https://firebase-demo.test.worth.systems/api/v1/account/register"
   private let URLStoreFirebaseToken = "https://firebase-demo.test.worth.systems/api/v1/token/save"
   private let URLLogNotification = "https://firebase-demo.test.worth.systems/api/v1/notification/action"
   private let URLLogEvent = "https://firebase-demo.test.worth.systems/api/v1/notification/event"
   private let storageService: StorageServiceProtocol = StorageService()
+
+  /// Tag to used in debug prints for easy search in Xcode debug console
+  private let logTag: String = "\(ServerService.self)"
 
   // MARK: - ServerServiceProtocol methods
 
@@ -57,25 +56,25 @@ class ServerService: ServerServiceProtocol {
 
     let task = URLSession.shared.dataTask(with: notificationLogUrlRequest) { _, response, error in
       guard error == nil else {
-        print("\(logTag): Error calling POST on /notification/action")
+        print("\(self.logTag): Error calling POST on /notification/action")
         print(error!)
         completion(error)
         return
       }
 
       guard let response = response as? HTTPURLResponse else {
-        print("\(logTag): Error failed response")
+        print("\(self.logTag): Error failed response")
         completion(error)
         return
       }
 
       if response.statusCode == 204 || response.statusCode == 200 {
-        print("\(logTag): Succesfully posted /notification/action")
+        print("\(self.logTag): Succesfully posted /notification/action")
         completion(nil)
         return
       }
 
-      print("\(logTag): Error parsing response from POST on /notification/action")
+      print("\(self.logTag): Error parsing response from POST on /notification/action")
       completion(error)
       return
     }
@@ -107,24 +106,24 @@ class ServerService: ServerServiceProtocol {
 
     let task = URLSession.shared.dataTask(with: eventLogUrlRequest) { _, response, error in
       guard error == nil else {
-        print("\(logTag): Error calling POST on /notification/event")
+        print("\(self.logTag): Error calling POST on /notification/event")
         print(error!)
         completion(error)
         return
       }
       guard let response = response as? HTTPURLResponse else {
-        print("\(logTag): Error failed response")
+        print("\(self.logTag): Error failed response")
         completion(error)
         return
       }
 
       if response.statusCode == 200 {
-        print("\(logTag): Successfully did POST on /notification/event")
+        print("\(self.logTag): Successfully did POST on /notification/event")
         completion(nil)
         return
       }
 
-      print("\(logTag): Error parsing response from POST on /notification/event")
+      print("\(self.logTag): Error parsing response from POST on /notification/event")
       completion(error)
       return
     }
@@ -155,13 +154,13 @@ class ServerService: ServerServiceProtocol {
 
     let task = URLSession.shared.dataTask(with: saveTokenUrlRequest) { _, response, error in
       guard error == nil else {
-        print("\(logTag): Error calling POST on /token/save")
+        print("\(self.logTag): Error calling POST on /token/save")
         print(error!)
         completion(error)
         return
       }
       guard let response = response as? HTTPURLResponse else {
-        print("\(logTag): Error failed response")
+        print("\(self.logTag): Error failed response")
         completion(error)
         return
       }
@@ -170,7 +169,7 @@ class ServerService: ServerServiceProtocol {
         completion(nil)
         return
       }
-      print("\(logTag): Error parsing response from POST on /token/save")
+      print("\(self.logTag): Error parsing response from POST on /token/save")
       completion(error)
       return
     }
@@ -198,13 +197,13 @@ class ServerService: ServerServiceProtocol {
 
     let task = URLSession.shared.dataTask(with: registerUrlRequest) { data, _, error in
       guard error == nil else {
-        print("\(logTag): Error calling POST on /account/register")
+        print("\(self.logTag): Error calling POST on /account/register")
         print(error!)
         completion(nil, error)
         return
       }
       guard let responseData = data else {
-        print("\(logTag): Error did not receive data")
+        print("\(self.logTag): Error did not receive data")
         completion(nil, error)
         return
       }
@@ -212,26 +211,26 @@ class ServerService: ServerServiceProtocol {
       // parse the result as JSON, since that's what the API provides
       do {
         guard let createAccountResponse = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any] else {
-          print("\(logTag): Could not get JSON from responseData as dictionary")
+          print("\(self.logTag): Could not get JSON from responseData as dictionary")
           completion(nil, error)
           return
         }
-        print("\(logTag): The response is: " + createAccountResponse.description)
+        print("\(self.logTag): The response is: " + createAccountResponse.description)
 
         guard let userId = createAccountResponse["id"] as? String else {
-          print("\(logTag): Could not get id as String from JSON")
+          print("\(self.logTag): Could not get id as String from JSON")
           completion(nil, error)
           return
         }
         print("The ID is: \(userId)")
         guard let secret = createAccountResponse["secret"] as? String else {
-          print("\(logTag): Could not get secret as String from JSON")
+          print("\(self.logTag): Could not get secret as String from JSON")
           completion(nil, error)
           return
         }
         completion(RegisterAccountResponse(id: userId, secret: secret), nil)
       } catch {
-        print("\(logTag): Error parsing response from POST on /account/register")
+        print("\(self.logTag): Error parsing response from POST on /account/register")
         completion(nil, error)
         return
       }

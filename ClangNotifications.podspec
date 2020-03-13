@@ -15,44 +15,37 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "ClangNotifications"
-  spec.version      = "0.0.1"
-  spec.summary      = "Clang Library for registering events @ clang env"
-  spec.description  = <<-DESC
-                        Clang Library for registering events @ clang env
-                   DESC
-  spec.homepage ="https://tanyapadalko@bitbucket.org/wi/evillage-ios.git"
+  spec.name                 = 'ClangNotifications'
+  spec.version              = '0.0.1'
+  spec.summary              = 'Clang Library for registering events @ clang env'
+  spec.description          = <<-DESC
+                              Clang Library for registering events @ clang env
+  DESC
+  spec.homepage             = 'https://tanyapadalko@bitbucket.org/wi/evillage-ios.git'
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license              = { :type => 'MIT', :file => 'FILE_LICENSE' }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.author             = { "tpadalko" => "tpadalko@worth.systems" }
+  spec.author               = { 'tpadalko' => 'tpadalko@worth.systems' }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.platform     = :ios, "12.0"
-
+  spec.platform             = :ios, '12.0'
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-  spec.source       = { :git => "https://tanyapadalko@bitbucket.org/wi/evillage-ios.git", :tag => "#{spec.version}" }
+  spec.source               = { :git => "https://tanyapadalko@bitbucket.org/wi/evillage-ios.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 
-
-
-
-  spec.source_files  = "ClangNotifications/**/*.{h,m}"
-
-  spec.public_header_files = "ClangNotifications/**/*.h"
-
-
+  spec.source_files         = 'ClangNotifications/**/*.{h,m}'
+  spec.public_header_files  = 'ClangNotifications/**/*.h'
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #

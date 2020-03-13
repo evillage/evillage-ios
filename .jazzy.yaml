@@ -1,0 +1,8 @@
+author: Worth Systems
+author_url: https://worth.systems/
+github_url: https://bitbucket.org/wi/evillage-ios
+module: ClangNotifications
+output: Documentation
+min_acl: private
+clean: false
+xcodebuild_arguments: [-workspace, 'ClangNotifications.xcworkspace',  -scheme, 'ClangNotifications', CODE_SIGNING_ALLOWED=NO, USE_SWIFT_RESPONSE_FILE=NO]

@@ -13,9 +13,15 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 ### Customer Id set up ###
 Customer id as a unique identifier for an app which uses the library and set in the config file for build:
 * Go to _your_workspace/ClangNotifications/Config.xcconfig_ and set _CUSTOMER_ID = your_application_unique_identifier_
-* In the application directory (not library) go to _info.plist_ and by using variable substitution in the _.plist_ 
+* In the application directory (not library) go to _info.plist_ and by using variable substitution in the _.plist_
 for the appropriate keys, substituting our custom variables from the xcconfig files:
 **CUSTOMER_ID** as a key and  value set to **$(CUSTOMER_ID)** which will be read from env config file.
+
+### Generate documentaion
+To generate documentation for this project, follow these simple steps:
+1. Install Jazzy on your mac by going to terminal and run 'sudo gem install jazzy' this will install the required files need to generate documentation
+2. Still in terminal navigate to the root of the project and run 'jazzy' the documentation will be generated in the /Documentation folder
+3. Enjoy the generated documentation!
 
 ### Links ###
 
@@ -23,3 +29,5 @@ for the appropriate keys, substituting our custom variables from the xcconfig fi
 * [Documentation in how to set certificates for Firebase and APN](https://docs.google.com/document/d/1RvWcAS-WYmlcAzUUiRgGu_iBPyzmXzr1Aez9DQdIL30/edit?usp=sharing)
 * [Google doc with some edge cases, etc.](https://docs.google.com/document/d/1Nw7Ik1VY8Sz2PPtj86yaTUyZ9qnO__xaDHcRuk6Xsbk/edit?usp=sharing)
 * [Server repo](https://bitbucket.org/wi/evillage-token-server/src)
+* [Jazzy document generator](https://github.com/realm/jazzy)
+* [Swiftlint](https://github.com/realm/SwiftLint)

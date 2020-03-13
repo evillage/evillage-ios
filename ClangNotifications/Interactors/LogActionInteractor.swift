@@ -13,9 +13,9 @@ protocol LogActionInteractorProtocol: class {
   func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Swift.Void)
 }
 
-private let logTag = "\(LogActionInteractor.self)"
-
 class LogActionInteractor: LogActionInteractorProtocol {
+  private let logTag = "\(LogActionInteractor.self)"
+
   let serverService: ServerServiceProtocol = ServerService()
   let storageService: StorageServiceProtocol = StorageService()
 
@@ -25,7 +25,7 @@ class LogActionInteractor: LogActionInteractorProtocol {
 
     serverService.logNotificationAction(notificationAction: notificationRequest) { error in
       guard error == nil else {
-        print("\(logTag): \(error!)")
+        print("\(LogActionInteractor.self): \(error!)")
         completion(error)
         return
       }
@@ -40,7 +40,7 @@ class LogActionInteractor: LogActionInteractorProtocol {
     let eventRequest = EventLogRequest(userId: userId, event: event, data: data)
     serverService.logEvent(eventLog: eventRequest) { error in
       guard error == nil else {
-        print("\(logTag): \(error!)")
+        print("\(self.logTag): \(error!)")
         completion(error)
         return
       }

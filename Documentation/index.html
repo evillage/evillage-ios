@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ClangNotifications  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="ClangNotifications  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">ClangNotifications Docs</a> (9% documented)</p>
+        <p class="header-right"><a href="https://bitbucket.org/wi/evillage-ios"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">ClangNotifications Reference</a>
+        <img id="carat" src="img/carat.png" />
+        ClangNotifications  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/AccountInteractor.html">AccountInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Clang.html">Clang</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/EventLogRequest.html">EventLogRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/KeyChainService.html">KeyChainService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/LogActionInteractor.html">LogActionInteractor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/NotificationActionRequest.html">NotificationActionRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RegisterAccountRequest.html">RegisterAccountRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/RegisterAccountResponse.html">RegisterAccountResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/SaveTokenRequest.html">SaveTokenRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/ServerService.html">ServerService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/StorageService.html">StorageService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TokenInteractor.html">TokenInteractor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/Environment.html">Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/Environment/PlistKeys.html">– PlistKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/HTTPRequestMethod.html">HTTPRequestMethod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Data.html">Data</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/AccountInteractorProtocol.html">AccountInteractorProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/LogActionInteractorProtocol.html">LogActionInteractorProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/ServerServiceProtocol.html">ServerServiceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/StorageServiceProtocol.html">StorageServiceProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/TokenInteractorProtocol.html">TokenInteractorProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <h1 id='readme' class='heading'>README</h1>
+
+<p>This is a proof of concept with a demo IOS application which uses our custom <a href="">library for notifications</a>
+App is written in Swift, uses Firebase cloud messaging for notifications.</p>
+<h3 id='how-to-run-the-application' class='heading'>How to run the application</h3>
+
+<ul>
+<li>clone this repository (default working branch is master)</li>
+<li>open project directory in terminal and run <code>pod install</code> (if you don&rsquo;t have CocoaPods installed the run first <code>sudo gem install cocoapods</code>)</li>
+<li>Open .xcworkspace file in Xcode and you&rsquo;re ready for using it</li>
+<li>Run the app on emulator or connect an IOS device (supported IOS is 12 and 13)</li>
+</ul>
+<h3 id='customer-id-set-up' class='heading'>Customer Id set up</h3>
+
+<p>Customer id as a unique identifier for an app which uses the library and set in the config file for build:</p>
+
+<ul>
+<li>Go to <em>your_workspace/ClangNotifications/Config.xcconfig</em> and set <em>CUSTOMER_ID = your_application_unique_identifier</em></li>
+<li>In the application directory (not library) go to <em>info.plist</em> and by using variable substitution in the <em>.plist</em>
+for the appropriate keys, substituting our custom variables from the xcconfig files:
+<strong>CUSTOMER_ID</strong> as a key and  value set to <strong>$(CUSTOMER_ID)</strong> which will be read from env config file.</li>
+</ul>
+<h3 id='generate-documentaion' class='heading'>Generate documentaion</h3>
+
+<p>To generate documentation for this project, follow these simple steps:</p>
+
+<ol>
+<li>Install Jazzy on your mac by going to terminal and run &lsquo;sudo gem install jazzy&rsquo; this will install the required files need to generate documentation</li>
+<li>Still in terminal navigate to the root of the project and run &lsquo;jazzy&rsquo; the documentation will be generated in the /Documentation folder</li>
+<li>Enjoy the generated documentation!</li>
+</ol>
+<h3 id='links' class='heading'>Links</h3>
+
+<ul>
+<li><a href="https://console.firebase.google.com/project/test-a04ac/overview">Firebase project</a> (for access ask <a href="mailto:oboekesteijn@worth.systems">oboekesteijn@worth.systems</a> or <a href="mailto:tpadalko@worth.systems">tpadalko@worth.systems</a>)</li>
+<li><a href="https://docs.google.com/document/d/1RvWcAS-WYmlcAzUUiRgGu_iBPyzmXzr1Aez9DQdIL30/edit?usp=sharing">Documentation in how to set certificates for Firebase and APN</a></li>
+<li><a href="https://docs.google.com/document/d/1Nw7Ik1VY8Sz2PPtj86yaTUyZ9qnO__xaDHcRuk6Xsbk/edit?usp=sharing">Google doc with some edge cases, etc.</a></li>
+<li><a href="https://bitbucket.org/wi/evillage-token-server/src">Server repo</a></li>
+<li><a href="https://github.com/realm/jazzy">Jazzy document generator</a></li>
+<li><a href="https://github.com/realm/SwiftLint">Swiftlint</a></li>
+</ul>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://worth.systems/" target="_blank" rel="external">Worth Systems</a>. All rights reserved. (Last updated: 2020-03-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
