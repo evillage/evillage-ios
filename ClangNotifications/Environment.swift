@@ -9,15 +9,16 @@
 import Foundation
 
 public enum Environment {
+
   // MARK: - Keys
-  enum Keys {
-    enum Plist {
-      static let rootURL = "ROOT_URL"
-      static let customerId = "CUSTOMER_ID"
-    }
+
+  enum PlistKeys {
+    static let rootURL = "ROOT_URL"
+    static let customerId = "CUSTOMER_ID"
   }
 
   // MARK: - Plist
+
   private static let infoDictionary: [String: Any] = {
     guard let dict = Bundle.main.infoDictionary else {
       fatalError("Plist file not found")
@@ -26,8 +27,9 @@ public enum Environment {
   }()
 
   // MARK: - Plist values
+
   static let rootURL: URL = {
-    guard let rootURLstring = Environment.infoDictionary[Keys.Plist.rootURL] as? String else {
+    guard let rootURLstring = Environment.infoDictionary[PlistKeys.rootURL] as? String else {
       fatalError("Root URL not set in plist for this environment")
     }
     guard let url = URL(string: rootURLstring) else {
@@ -37,7 +39,7 @@ public enum Environment {
   }()
 
   static let customerId: String = {
-    guard let customerId = Environment.infoDictionary[Keys.Plist.customerId] as? String else {
+    guard let customerId = Environment.infoDictionary[PlistKeys.customerId] as? String else {
       fatalError("Customer Id not set in plist for this environment")
     }
     return customerId

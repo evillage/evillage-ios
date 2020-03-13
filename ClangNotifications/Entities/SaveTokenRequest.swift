@@ -9,11 +9,11 @@
 import Foundation
 
 class SaveTokenRequest: Codable {
-    var userId: String
-    var tokens: Array<String>
-    
-    init(userId: String, token: String) {
-      self.userId = userId
-        self.tokens = [token]
-    }
+  var userId: String
+  var tokens: [String]
+
+  init(userId: String, token: String) {
+    self.userId = userId
+    self.tokens = [token]
+  }
 }

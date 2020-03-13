@@ -8,34 +8,32 @@
 
 import Foundation
 
-
 //public protocol ClangProtocol: class {
 //    func registerAccount(completion: @escaping (String?, Error?) -> Swift.Void)
 //    func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Swift.Void)
 //}
 
 public class Clang {
+  let accountInteractor: AccountInteractorProtocol = AccountInteractor()
+  let logActionInteractor: LogActionInteractorProtocol = LogActionInteractor()
+  let tokenInteractor: TokenInteractorProtocol = TokenInteractor()
 
-    let accountInteractor: AccountInteractorProtocol = AccountInteractor()
-    let logActionInteractor: LogActionInteractorProtocol = LogActionInteractor()
-    let tokenInteractor: TokenInteractorProtocol = TokenInteractor()
-    
-    public init() {}
-    
-    public func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Swift.Void) {
-        accountInteractor.registerAccount(firebaseToken: firebaseToken, completion: completion)
-    }
-    
-    public func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Swift.Void) {
-        logActionInteractor.logEvent(event: event, data: data, completion: completion)
-        
-    }
-    
-    public func logNotification(notificationId: String, actionId: String, completion: @escaping (Error?) -> Swift.Void) {
-        logActionInteractor.logNotificationAction(notificationId: notificationId, actionId: actionId, completion: completion)
-    }
-    
-    public func updateTokenOnServer(firebaseToken: String, completion: @escaping (Error?) -> Swift.Void) {
-        tokenInteractor.sendTokenToServer(firebaseToken: firebaseToken, completion: completion)
-    }
+  public init() {}
+
+  public func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Void) {
+    accountInteractor.registerAccount(firebaseToken: firebaseToken, completion: completion)
+  }
+
+  public func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Void) {
+    logActionInteractor.logEvent(event: event, data: data, completion: completion)
+
+  }
+
+  public func logNotification(notificationId: String, actionId: String, completion: @escaping (Error?) -> Void) {
+    logActionInteractor.logNotificationAction(notificationId: notificationId, actionId: actionId, completion: completion)
+  }
+
+  public func updateTokenOnServer(firebaseToken: String, completion: @escaping (Error?) -> Void) {
+    tokenInteractor.sendTokenToServer(firebaseToken: firebaseToken, completion: completion)
+  }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2019 Worth Internet Systems. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 //! Project version number for ClangNotifications.
 FOUNDATION_EXPORT double ClangNotificationsVersionNumber;
