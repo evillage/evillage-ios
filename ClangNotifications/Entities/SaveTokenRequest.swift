@@ -11,9 +11,11 @@ import Foundation
 struct SaveTokenRequest: Codable {
   var userId: String
   var tokens: [String]
+  var integrationdId: String
 
   init(userId: String, token: String) {
     self.userId = userId
     self.tokens = [token]
+    self.integrationdId = Environment.integrationId
   }
 }

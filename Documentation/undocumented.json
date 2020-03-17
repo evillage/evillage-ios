@@ -38,41 +38,55 @@
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
       "line": 17,
+      "symbol": "Clang.authorizationToken",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
+      "line": 18,
+      "symbol": "Clang.integrationId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
+      "line": 20,
       "symbol": "Clang.init()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 19,
+      "line": 22,
       "symbol": "Clang.registerAccount(firebaseToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 23,
+      "line": 26,
       "symbol": "Clang.logEvent(event:data:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 28,
+      "line": 31,
       "symbol": "Clang.logNotification(notificationId:actionId:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 32,
+      "line": 35,
       "symbol": "Clang.updateTokenOnServer(firebaseToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 36,
+      "line": 39,
       "symbol": "Clang.updateProperties(data:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -240,7 +254,14 @@
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Entities/SaveTokenRequest.swift",
-      "line": 15,
+      "line": 14,
+      "symbol": "SaveTokenRequest.integrationdId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Entities/SaveTokenRequest.swift",
+      "line": 16,
       "symbol": "SaveTokenRequest.init(userId:token:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -275,22 +296,22 @@
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 22,
+      "line": 18,
+      "symbol": "Environment.PlistKeys.authorizationToken",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
+      "line": 19,
+      "symbol": "Environment.PlistKeys.integrationId",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
+      "line": 24,
       "symbol": "Environment.infoDictionary",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 31,
-      "symbol": "Environment.rootURL",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 41,
-      "symbol": "Environment.customerId",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },

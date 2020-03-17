@@ -9,12 +9,12 @@
 import Foundation
 
 public class Clang {
-  let accountInteractor: AccountInteractorProtocol = AccountInteractor()
-  let logActionInteractor: LogActionInteractorProtocol = LogActionInteractor()
-  let tokenInteractor: TokenInteractorProtocol = TokenInteractor()
-  let propertiesInteractor: PropertiesInteractorProtocol = PropertiesInteractor()
+  private let accountInteractor: AccountInteractorProtocol = AccountInteractor()
+  private let logActionInteractor: LogActionInteractorProtocol = LogActionInteractor()
+  private let tokenInteractor: TokenInteractorProtocol = TokenInteractor()
+  private let propertiesInteractor: PropertiesInteractorProtocol = PropertiesInteractor()
 
-  public init() {}
+  public init() { }
 
   public func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Void) {
     accountInteractor.registerAccount(firebaseToken: firebaseToken, completion: completion)

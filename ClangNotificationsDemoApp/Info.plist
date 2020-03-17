@@ -6,6 +6,8 @@
 	<string>$(CUSTOMER_ID)</string>
 	<key>ROOT_URL</key>
 	<string>${ROOT_URL}</string>
+	<key>INTEGRATION_ID</key>
+	<string>Apples</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

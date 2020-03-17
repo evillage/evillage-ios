@@ -70,22 +70,29 @@ extension AppDelegate: MessagingDelegate {
         return
       }
 
-      Clang().registerAccount(firebaseToken: result.token) { userId, error in
-        guard error == nil else {
-          print("AppDelegate+NotificationExtension: \(error!)")
-          return
-        }
-        print("AppDelegate+NotificationExtension: USER IS \(userId ?? "")")
-      }
+      // Check for a saved token here, when there is one we know that this device is already registered
+      // we only need to update the token then. Else register this device for an account
+      if let token = UserDefaults.standard.string(forKey: "FirebaseToken"), !token.isEmpty {
+        Clang().updateTokenOnServer(firebaseToken: result.token) { error in
+          guard error == nil else {
+            print("AppDelegate+NotificationExtension: \(error!)")
+            return
+          }
 
-      //        Clang().updateTokenOnServer(firebaseToken: result.token) { error in
-      //          guard error == nil else {
-      //            print("AppDelegate+NotificationExtension: \(error!)")
-      //            return
-      //          }
-      //          print("AppDelegate+NotificationExtension: SUCCESSFULLY UPDATED TOKEN!")
-      //          return
-      //        `}
+          print("AppDelegate+NotificationExtension: Succesfully updated FCM token to \(token)")
+          UserDefaults.standard.set(result.token, forKey: "FirebaseToken")
+        }
+      } else {
+        Clang().registerAccount(firebaseToken: result.token) { userId, error in
+          guard error == nil else {
+            print("AppDelegate+NotificationExtension: \(error!)")
+            return
+          }
+
+          print("AppDelegate+NotificationExtension: USER IS \(userId ?? "")")
+          UserDefaults.standard.set(result.token, forKey: "FirebaseToken")
+        }
+      }
     }
   }
 }
