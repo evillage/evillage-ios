@@ -20,6 +20,7 @@ for the appropriate keys, substituting our custom variables from the xcconfig fi
 ### Create a new version on Cocoapods
 Cocoapods used the tag system of bitbucket to specifcy which version is being used. When you want to create a new version of the ClangNotifications pod
 perfrom the following steps
+
 * Tag the version in Bitbucket with the new version number
 * Change the **$(spec.version)** in the ClangNotifications.podspec file to the same version as you just tagged in bitbucket
 * Open terminal and navigate to the root of the project and run `pod lib lint` to see if everything is correct
@@ -27,6 +28,7 @@ perfrom the following steps
 
 ### Generate documentaion
 To generate documentation for this project, follow these simple steps:
+
 * Install Jazzy on your mac by going to terminal and run 'sudo gem install jazzy' this will install the required files need to generate documentation
 * Still in terminal navigate to the root of the project and run 'jazzy' the documentation will be generated in the /Documentation folder
 * Enjoy the generated documentation!
