@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01553D8B8F78CA371137F30E /* Pods_ClangNotificationsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4AD26798500FA8B09811B7 /* Pods_ClangNotificationsDemoApp.framework */; };
+		3257B60824210F2000E62F78 /* PropertiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257B60724210F2000E62F78 /* PropertiesRequest.swift */; };
 		326A52FE241B96880044FE5E /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A52FD241B96880044FE5E /* DataExtension.swift */; };
 		326A5303241BA2B20044FE5E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A5302241BA2B20044FE5E /* UIViewControllerExtension.swift */; };
 		326A5305241BA4600044FE5E /* AppDelegate+NotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A5304241BA4600044FE5E /* AppDelegate+NotificationsExtension.swift */; };
@@ -67,6 +68,7 @@
 /* Begin PBXFileReference section */
 		03406C46DC67DA9B816A33D2 /* Pods_ClangNotifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClangNotifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B9C89CEF241D3646B2FE6A1 /* Pods-ClangNotificationsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClangNotificationsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-ClangNotificationsDemoApp/Pods-ClangNotificationsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3257B60724210F2000E62F78 /* PropertiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRequest.swift; sourceTree = "<group>"; };
 		326A52FD241B96880044FE5E /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		326A5302241BA2B20044FE5E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		326A5304241BA4600044FE5E /* AppDelegate+NotificationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NotificationsExtension.swift"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				9738BD6D237885BF00AE0C08 /* EventLogRequest.swift */,
 				9738BD6E237885BF00AE0C08 /* SaveTokenRequest.swift */,
 				9738BD6F237885BF00AE0C08 /* NotificationActionRequest.swift */,
+				3257B60724210F2000E62F78 /* PropertiesRequest.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				9738BD7A237885D300AE0C08 /* KeychainService.swift in Sources */,
 				9738BD73237885BF00AE0C08 /* SaveTokenRequest.swift in Sources */,
 				326A52FE241B96880044FE5E /* DataExtension.swift in Sources */,
+				3257B60824210F2000E62F78 /* PropertiesRequest.swift in Sources */,
 				9738BD7B237885D300AE0C08 /* ServerService.swift in Sources */,
 				9738BD70237885BF00AE0C08 /* RegisterAccountResponse.swift in Sources */,
 			);

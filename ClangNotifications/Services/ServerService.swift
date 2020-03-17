@@ -10,15 +10,16 @@ import Foundation
 import UIKit
 
 /// HTTPRequest methods used in the API calls
-private enum HTTPRequestMethod {
-  static let post = "POST"
-  static let get = "GET"
+private enum HTTPRequestMethod: String {
+  case post = "POST"
+  case get = "GET"
 }
 
 /// APIErrors that coud be generated when performing API calls
 enum APIError: Error {
   case noData
   case parseError
+  case httpError(code: Int)
 }
 
 protocol ServerServiceProtocol: class {
@@ -26,6 +27,7 @@ protocol ServerServiceProtocol: class {
   func saveToken(saveToken: SaveTokenRequest, completion: @escaping (Error?) -> Void)
   func logNotificationAction(notificationAction: NotificationActionRequest, completion: @escaping (Error?) -> Void)
   func logEvent(eventLog: EventLogRequest, completion: @escaping (Error?) -> Void)
+  func updateProperties(propertiesRequest: PropertiesRequest, completion: @escaping (Error?) -> Void)
 }
 
 class ServerService: ServerServiceProtocol {
@@ -34,32 +36,45 @@ class ServerService: ServerServiceProtocol {
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag: String = "\(ServerService.self)"
 
+  // MARK: - Private methods
+
+  /// Generate an URLRequest with default headerfields
+  /// - Parameters:
+  ///   - url: The URL we need to create the URLRequest
+  ///   - httpMethod: The HTTPRequest method (e.g. POST, GET e.t.c.)
+  ///   - addAuthHeader: Boolean flag that indicated if we should add the authorization header to the URLRequest. Defaults to true
+  private func generateURLRequest(url: URL, httpMethod: HTTPRequestMethod, addAuthHeader: Bool = true) -> URLRequest {
+    var urlRequest = URLRequest(url: url)
+    urlRequest.httpMethod = httpMethod.rawValue
+    urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+    urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+    if addAuthHeader {
+      urlRequest.setValue("Bearer \(self.storageService.loadUserSecret() ?? "")", forHTTPHeaderField: "authentication")
+    }
+
+    return urlRequest
+  }
+
   // MARK: - ServerServiceProtocol methods
 
   internal func logNotificationAction(notificationAction: NotificationActionRequest, completion: @escaping (Error?) -> Void) {
-    guard let notificationLogURL = URL(string: "\(Environment.rootURL)/api/v1/notification/action") else {
+    guard let url = URL(string: "\(Environment.rootURL)/api/v1/notification/action") else {
       preconditionFailure("\(logTag): Error cannot create URL for logging notifications")
     }
-    let secret = self.storageService.loadUserSecret()
-    var notificationLogUrlRequest = URLRequest(url: notificationLogURL)
-    notificationLogUrlRequest.httpMethod = HTTPRequestMethod.post
-    notificationLogUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-    notificationLogUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-    notificationLogUrlRequest.setValue("Bearer \(secret ?? "")", forHTTPHeaderField: "authentication")
+
+    var urlRequest = generateURLRequest(url: url, httpMethod: .post)
 
     do {
-      let jsonData = try JSONEncoder().encode(notificationAction)
-      notificationLogUrlRequest.httpBody = jsonData
+      urlRequest.httpBody = try JSONEncoder().encode(notificationAction)
     } catch let error {
-      print("\(logTag): Error cannot create JSON from notificationLog model")
+      print("\(logTag): Error cannot create JSON from NotificationActionRequest entity")
       completion(error)
       return
     }
 
-    let task = URLSession.shared.dataTask(with: notificationLogUrlRequest) { _, response, error in
+    let task = URLSession.shared.dataTask(with: urlRequest) { _, response, error in
       guard error == nil else {
-        print("\(self.logTag): Error calling POST on /notification/action")
-        print(error!)
+        print("\(self.logTag): Error calling POST on /notification/action with error: \(error!)")
         completion(error)
         return
       }
@@ -70,40 +85,34 @@ class ServerService: ServerServiceProtocol {
         return
       }
 
-      if response.statusCode == 204 || response.statusCode == 200 {
-        print("\(self.logTag): Succesfully posted /notification/action")
-        completion(nil)
+      guard response.statusCode == 200 || response.statusCode == 204 else {
+        print("\(self.logTag): Error parsing response from POST on /notification/action with code: \(response.statusCode)")
+        completion(APIError.httpError(code: response.statusCode))
         return
       }
 
-      print("\(self.logTag): Error parsing response from POST on /notification/action")
-      completion(APIError.parseError)
-      return
+      print("\(self.logTag): Succesfully posted /notification/action")
+      completion(nil)
     }
     task.resume()
   }
 
   internal func logEvent(eventLog: EventLogRequest, completion: @escaping (Error?) -> Void) {
-    guard let eventLogURL = URL(string: "\(Environment.rootURL)/api/v1/notification/event") else {
+    guard let url = URL(string: "\(Environment.rootURL)/api/v1/notification/event") else {
       preconditionFailure("\(logTag): Error cannot create URL for event logging")
     }
 
-    var eventLogUrlRequest = URLRequest(url: eventLogURL)
-    eventLogUrlRequest.httpMethod = HTTPRequestMethod.post
-    eventLogUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-    eventLogUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-    eventLogUrlRequest.setValue("Bearer \(self.storageService.loadUserSecret() ?? "")", forHTTPHeaderField: "authentication")
+    var urlRequest = generateURLRequest(url: url, httpMethod: .post)
 
     do {
-      let jsonData = try JSONEncoder().encode(eventLog)
-      eventLogUrlRequest.httpBody = jsonData
+      urlRequest.httpBody = try JSONEncoder().encode(eventLog)
     } catch {
-      print("\(logTag): Error cannot create JSON from eventLog model")
+      print("\(logTag): Error cannot create JSON from EventLogRequest entity")
       completion(error)
       return
     }
 
-    let task = URLSession.shared.dataTask(with: eventLogUrlRequest) { _, response, error in
+    let task = URLSession.shared.dataTask(with: urlRequest) { _, response, error in
       guard error == nil else {
         print("\(self.logTag): Error calling POST on /notification/event")
         print(error!)
@@ -116,39 +125,34 @@ class ServerService: ServerServiceProtocol {
         return
       }
 
-      if response.statusCode == 200 {
-        print("\(self.logTag): Successfully did POST on /notification/event")
-        completion(nil)
+      guard response.statusCode == 200 || response.statusCode == 204 else {
+        print("\(self.logTag): Error parsing response from POST on /notification/event with code: \(response.statusCode)")
+        completion(APIError.httpError(code: response.statusCode))
         return
       }
 
-      print("\(self.logTag): Error parsing response from POST on /notification/event")
-      completion(APIError.parseError)
+      print("\(self.logTag): Successfully did POST on /notification/event")
+      completion(nil)
     }
     task.resume()
   }
 
   internal func saveToken(saveToken: SaveTokenRequest, completion: @escaping (Error?) -> Void) {
-    guard let saveTokenURL = URL(string: "\(Environment.rootURL)/api/v1/token/save") else {
+    guard let url = URL(string: "\(Environment.rootURL)/api/v1/token/save") else {
       preconditionFailure("Error cannot create URL for saving token")
     }
 
-    var saveTokenUrlRequest = URLRequest(url: saveTokenURL)
-    saveTokenUrlRequest.httpMethod = HTTPRequestMethod.post
-    saveTokenUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-    saveTokenUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
-    saveTokenUrlRequest.setValue("Bearer \(self.storageService.loadUserSecret() ?? "")", forHTTPHeaderField: "authentication")
+    var urlRequest = generateURLRequest(url: url, httpMethod: .post)
 
     do {
-      let jsonData = try JSONEncoder().encode(saveToken)
-      saveTokenUrlRequest.httpBody = jsonData
+      urlRequest.httpBody = try JSONEncoder().encode(saveToken)
     } catch {
-      print("\(logTag): Error cannot create JSON from saveTokenRequest model")
+      print("\(logTag): Error cannot create JSON from SaveTokenRequest entity")
       completion(error)
       return
     }
 
-    let task = URLSession.shared.dataTask(with: saveTokenUrlRequest) { _, response, error in
+    let task = URLSession.shared.dataTask(with: urlRequest) { _, response, error in
       guard error == nil else {
         print("\(self.logTag): Error calling POST on /token/save")
         print(error!)
@@ -161,37 +165,33 @@ class ServerService: ServerServiceProtocol {
         return
       }
 
-      if response.statusCode == 204 || response.statusCode == 200 {
-        completion(nil)
+      guard response.statusCode == 200 || response.statusCode == 204 else {
+        print("\(self.logTag): Error parsing response from POST on /token/save with code: \(response.statusCode)")
+        completion(APIError.httpError(code: response.statusCode))
         return
       }
-      print("\(self.logTag): Error parsing response from POST on /token/save")
-      completion(APIError.parseError)
-      return
+
+      completion(nil)
     }
     task.resume()
   }
 
   internal func registerAccount(registerAccount: RegisterAccountRequest, completion: @escaping (RegisterAccountResponse?, Error?) -> Void) {
-    guard let registerURL = URL(string: "\(Environment.rootURL)/api/v1/account/register") else {
+    guard let url = URL(string: "\(Environment.rootURL)/api/v1/account/register") else {
       preconditionFailure("\(logTag): Error cannot create URL for registering account")
     }
 
-    var registerUrlRequest = URLRequest(url: registerURL)
-    registerUrlRequest.httpMethod = HTTPRequestMethod.post
-    registerUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-    registerUrlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+    var urlRequest = generateURLRequest(url: url, httpMethod: .post, addAuthHeader: false)
 
     do {
-      let jsonData = try JSONEncoder().encode(registerAccount)
-      registerUrlRequest.httpBody = jsonData
+      urlRequest.httpBody = try JSONEncoder().encode(registerAccount)
     } catch let error {
-      print("\(logTag): Error cannot create JSON from registerAccount model")
+      print("\(logTag): Error cannot create JSON from RegisterAccountRequest entity")
       completion(nil, error)
       return
     }
 
-    let task = URLSession.shared.dataTask(with: registerUrlRequest) { data, _, error in
+    let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
       guard error == nil else {
         print("\(self.logTag): Error calling POST on /account/register")
         print(error!)
@@ -211,11 +211,49 @@ class ServerService: ServerServiceProtocol {
         print("The ID is: \(registerAccountResponse.id)")
         print("The Secret is: \(registerAccountResponse.secret)")
         completion(registerAccountResponse, nil)
-      } catch {
-        print("\(self.logTag): Error parsing response from POST on /account/register")
+      } catch let error {
+        print("\(self.logTag): Error parsing response from POST on /account/register with error: \(error.localizedDescription)")
         completion(nil, APIError.parseError)
+      }
+    }
+    task.resume()
+  }
+
+  internal func updateProperties(propertiesRequest: PropertiesRequest, completion: @escaping (Error?) -> Void) {
+    guard let url = URL(string: "\(Environment.rootURL)/api/v1/properties") else {
+      preconditionFailure("\(logTag): Error cannot create URL for updating properties")
+    }
+
+    var urlRequest = generateURLRequest(url: url, httpMethod: .post)
+
+    do {
+      urlRequest.httpBody = try JSONEncoder().encode(propertiesRequest)
+    } catch let error {
+      print("\(self.logTag): Error can't create JSON from PropertiesRequest entity")
+      completion(error)
+      return
+    }
+
+    let task = URLSession.shared.dataTask(with: urlRequest) { _, response, error in
+      guard error == nil else {
+        print("\(self.logTag): Error calling POST on /properties with error: \(error!)")
+        completion(error)
         return
       }
+
+      guard let response = response as? HTTPURLResponse else {
+        print("\(self.logTag): Error failed response")
+        completion(APIError.noData)
+        return
+      }
+
+      guard response.statusCode == 200 || response.statusCode == 204 else {
+        print("\(self.logTag): Error parsing response from POST on /token/save")
+        completion(APIError.httpError(code: response.statusCode))
+        return
+      }
+
+      completion(nil)
     }
     task.resume()
   }
