@@ -13,7 +13,7 @@
     <a title="ClangNotifications  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ClangNotifications Docs</a> (9% documented)</p>
+        <p><a href="index.html">ClangNotifications Docs</a> (15% documented)</p>
         <p class="header-right"><a href="https://bitbucket.org/wi/evillage-ios"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -37,25 +37,13 @@
                 <a href="Classes/Clang.html">Clang</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/EventLogRequest.html">EventLogRequest</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Classes/KeyChainService.html">KeyChainService</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/LogActionInteractor.html">LogActionInteractor</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/NotificationActionRequest.html">NotificationActionRequest</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/RegisterAccountRequest.html">RegisterAccountRequest</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/RegisterAccountResponse.html">RegisterAccountResponse</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="Classes/SaveTokenRequest.html">SaveTokenRequest</a>
+                <a href="Classes/PropertiesInteractor.html">PropertiesInteractor</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/ServerService.html">ServerService</a>
@@ -71,6 +59,9 @@
           <li class="nav-group-name">
             <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/APIError.html">APIError</a>
+              </li>
               <li class="nav-group-task">
                 <a href="Enums/Environment.html">Environment</a>
               </li>
@@ -100,6 +91,9 @@
                 <a href="Protocols/LogActionInteractorProtocol.html">LogActionInteractorProtocol</a>
               </li>
               <li class="nav-group-task">
+                <a href="Protocols/PropertiesInteractorProtocol.html">PropertiesInteractorProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Protocols/ServerServiceProtocol.html">ServerServiceProtocol</a>
               </li>
               <li class="nav-group-task">
@@ -107,6 +101,29 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/TokenInteractorProtocol.html">TokenInteractorProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/EventLogRequest.html">EventLogRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/NotificationActionRequest.html">NotificationActionRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/PropertiesRequest.html">PropertiesRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RegisterAccountRequest.html">RegisterAccountRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/RegisterAccountResponse.html">RegisterAccountResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/SaveTokenRequest.html">SaveTokenRequest</a>
               </li>
             </ul>
           </li>
@@ -126,7 +143,7 @@ App is written in Swift, uses Firebase cloud messaging for notifications.</p>
 <li>clone this repository (default working branch is master)</li>
 <li>open project directory in terminal and run <code>pod install</code> (if you don&rsquo;t have CocoaPods installed the run first <code>sudo gem install cocoapods</code>)</li>
 <li>Open .xcworkspace file in Xcode and you&rsquo;re ready for using it</li>
-<li>Run the app on emulator or connect an IOS device (supported IOS is 12 and 13)</li>
+<li>Run the app on simulator or connect an IOS device (supported IOS is 12 and 13). Remember push notifications won&rsquo;t work on the simulator.</li>
 </ul>
 <h3 id='customer-id-set-up' class='heading'>Customer Id set up</h3>
 
@@ -138,6 +155,17 @@ App is written in Swift, uses Firebase cloud messaging for notifications.</p>
 for the appropriate keys, substituting our custom variables from the xcconfig files:
 <strong>CUSTOMER_ID</strong> as a key and  value set to <strong>$(CUSTOMER_ID)</strong> which will be read from env config file.</li>
 </ul>
+<h3 id='create-a-new-version-on-cocoapods' class='heading'>Create a new version on Cocoapods</h3>
+
+<p>Cocoapods used the tag system of bitbucket to specifcy which version is being used. When you want to create a new version of the ClangNotifications pod
+perfrom the following steps</p>
+
+<ol>
+<li>Tag the version in Bitbucket with the new version number</li>
+<li>Change the <strong>$(spec.version)</strong> in the ClangNotifications.podspec file to the same version as you just tagged in bitbucket</li>
+<li>Open terminal and navigate to the root of the project and run <code>pod lib lint</code> to see if everything is correct</li>
+<li>run <code>pod trunk push ClangNotifications.podspec</code> in the same terminal to submit the code to Cocoapods</li>
+</ol>
 <h3 id='generate-documentaion' class='heading'>Generate documentaion</h3>
 
 <p>To generate documentation for this project, follow these simple steps:</p>
@@ -156,12 +184,13 @@ for the appropriate keys, substituting our custom variables from the xcconfig fi
 <li><a href="https://bitbucket.org/wi/evillage-token-server/src">Server repo</a></li>
 <li><a href="https://github.com/realm/jazzy">Jazzy document generator</a></li>
 <li><a href="https://github.com/realm/SwiftLint">Swiftlint</a></li>
+<li><a href="https://guides.cocoapods.org/">Cocoapods documentation</a></li>
 </ul>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://worth.systems/" target="_blank" rel="external">Worth Systems</a>. All rights reserved. (Last updated: 2020-03-13)</p>
+          <p>&copy; 2020 <a class="link" href="https://worth.systems/" target="_blank" rel="external">Worth Systems</a>. All rights reserved. (Last updated: 2020-03-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

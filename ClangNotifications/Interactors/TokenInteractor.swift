@@ -13,6 +13,7 @@ protocol TokenInteractorProtocol: class {
 }
 
 class TokenInteractor: TokenInteractorProtocol {
+  /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(TokenInteractor.self)"
 
   let serverService: ServerServiceProtocol = ServerService()

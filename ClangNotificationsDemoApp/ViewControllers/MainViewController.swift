@@ -10,10 +10,10 @@ import UIKit
 import CoreLocation
 import ClangNotifications
 
-/// Tag to used in debug prints for easy search in Xcode debug console
-private let logTag = "\(ViewController.self)"
+class MainViewController: UIViewController {
+  /// Tag to used in debug prints for easy search in Xcode debug console
+  private let logTag = "\(MainViewController.self)"
 
-class ViewController: UIViewController {
   let locationManager = CLLocationManager()
 
   override func viewDidLoad() {
@@ -34,12 +34,7 @@ class ViewController: UIViewController {
   }
 
   @IBAction func shareLocation(_ sender: UIButton) {
-    retrieveCurrentLocation()
-  }
-
-  private func retrieveCurrentLocation() {
     let status = CLLocationManager.authorizationStatus()
-
     if status == .denied || status == .restricted || !CLLocationManager.locationServicesEnabled() {
       self.showDefaultAlert(title: "Oopsie", message: "You need to enable location usage for this app in settings")
       return
@@ -52,9 +47,22 @@ class ViewController: UIViewController {
 
     locationManager.requestLocation()
   }
+
+  @IBAction func setProperty(_ sender: UIButton) {
+    Clang().updateProperties(data: ["Pizza": "Calzone"]) { error in
+      guard error == nil else {
+        print("\(self.logTag): \(error!)")
+        self.showDefaultAlert(title: "Oopsie", message: "Failed to set property with error: \(error!)")
+        return
+      }
+
+      print("Successfully performed API call!")
+      self.showDefaultAlert(title: "Properties updated", message: "Properties successfully updated")
+    }
+  }
 }
 
-extension ViewController: CLLocationManagerDelegate {
+extension MainViewController: CLLocationManagerDelegate {
   func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
     print("\(logTag): location manager authorization status changed")
     if status == .authorizedWhenInUse || status == .authorizedAlways {
@@ -69,12 +77,12 @@ extension ViewController: CLLocationManagerDelegate {
 
       Clang().logEvent(event: "LOCATION_SHARE", data: logData) { (error) in
         guard error == nil else {
-          print("\(logTag): \(error!)")
+          print("\(self.logTag): \(error!)")
           self.showDefaultAlert(title: "Oopsie", message: error!.localizedDescription)
           return
         }
 
-        print("\(logTag): LOCATION: ", logData["latitude"] ?? "", logData["longitude"] ?? "")
+        print("\(self.logTag): LOCATION: ", logData["latitude"] ?? "", logData["longitude"] ?? "")
         self.showDefaultAlert(title: "Thanks, now we know where you are!", message: "🕵️")
       }
     }

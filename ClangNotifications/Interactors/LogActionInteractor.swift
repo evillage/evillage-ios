@@ -14,6 +14,7 @@ protocol LogActionInteractorProtocol: class {
 }
 
 class LogActionInteractor: LogActionInteractorProtocol {
+  /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(LogActionInteractor.self)"
 
   let serverService: ServerServiceProtocol = ServerService()

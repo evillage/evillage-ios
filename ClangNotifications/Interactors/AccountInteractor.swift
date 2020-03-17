@@ -13,6 +13,9 @@ protocol AccountInteractorProtocol: class {
 }
 
 class AccountInteractor: AccountInteractorProtocol {
+  /// Tag to used in debug prints for easy search in Xcode debug console
+  private let logTag = "\(AccountInteractor.self)"
+
   let serverService: ServerServiceProtocol = ServerService()
   let storageService: StorageServiceProtocol = StorageService()
 
@@ -22,14 +25,13 @@ class AccountInteractor: AccountInteractorProtocol {
 
     serverService.registerAccount(registerAccount: registerAccountModel) { registerAccountResponse, error in
       guard error == nil else {
-        print(error!)
+        print("\(self.logTag): \(error!)")
         completion(nil, error)
         return
       }
       self.storageService.saveUserId(userId: registerAccountResponse?.id ?? "")
       self.storageService.saveUserSecret(secret: registerAccountResponse?.secret ?? "") // User secret to be removed
       completion(registerAccountResponse?.id, nil)
-      return
     }
   }
 }

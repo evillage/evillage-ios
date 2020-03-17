@@ -14,7 +14,7 @@
     <a title="Clang Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ClangNotifications Docs</a> (9% documented)</p>
+        <p><a href="../index.html">ClangNotifications Docs</a> (23% documented)</p>
         <p class="header-right"><a href="https://bitbucket.org/wi/evillage-ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -38,25 +38,13 @@
                 <a href="../Classes/Clang.html">Clang</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/EventLogRequest.html">EventLogRequest</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/KeyChainService.html">KeyChainService</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/LogActionInteractor.html">LogActionInteractor</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/NotificationActionRequest.html">NotificationActionRequest</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/RegisterAccountRequest.html">RegisterAccountRequest</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/RegisterAccountResponse.html">RegisterAccountResponse</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/SaveTokenRequest.html">SaveTokenRequest</a>
+                <a href="../Classes/PropertiesInteractor.html">PropertiesInteractor</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/ServerService.html">ServerService</a>
@@ -72,6 +60,9 @@
           <li class="nav-group-name">
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/APIError.html">APIError</a>
+              </li>
               <li class="nav-group-task">
                 <a href="../Enums/Environment.html">Environment</a>
               </li>
@@ -101,6 +92,9 @@
                 <a href="../Protocols/LogActionInteractorProtocol.html">LogActionInteractorProtocol</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Protocols/PropertiesInteractorProtocol.html">PropertiesInteractorProtocol</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/ServerServiceProtocol.html">ServerServiceProtocol</a>
               </li>
               <li class="nav-group-task">
@@ -108,6 +102,29 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Protocols/TokenInteractorProtocol.html">TokenInteractorProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/EventLogRequest.html">EventLogRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/NotificationActionRequest.html">NotificationActionRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/PropertiesRequest.html">PropertiesRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RegisterAccountRequest.html">RegisterAccountRequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/RegisterAccountResponse.html">RegisterAccountResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/SaveTokenRequest.html">SaveTokenRequest</a>
               </li>
             </ul>
           </li>
@@ -204,6 +221,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">tokenInteractor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/TokenInteractorProtocol.html">TokenInteractorProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18ClangNotifications0A0C20propertiesInteractorAA010PropertiesD8Protocol_pvp"></a>
+                    <a name="//apple_ref/swift/Property/propertiesInteractor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18ClangNotifications0A0C20propertiesInteractorAA010PropertiesD8Protocol_pvp">propertiesInteractor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">propertiesInteractor</span><span class="p">:</span> <span class="kt"><a href="../Protocols/PropertiesInteractorProtocol.html">PropertiesInteractorProtocol</a></span></code></pre>
 
                         </div>
                       </div>
@@ -345,12 +389,39 @@
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:18ClangNotifications0A0C16updateProperties4data10completionySDyS2SG_ys5Error_pSgctF"></a>
+                    <a name="//apple_ref/swift/Method/updateProperties(data:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:18ClangNotifications0A0C16updateProperties4data10completionySDyS2SG_ys5Error_pSgctF">updateProperties(data:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateProperties</span><span class="p">(</span><span class="nv">data</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">],</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2020 <a class="link" href="https://worth.systems/" target="_blank" rel="external">Worth Systems</a>. All rights reserved. (Last updated: 2020-03-13)</p>
+          <p>&copy; 2020 <a class="link" href="https://worth.systems/" target="_blank" rel="external">Worth Systems</a>. All rights reserved. (Last updated: 2020-03-17)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -8,15 +8,11 @@
 
 import Foundation
 
-//public protocol ClangProtocol: class {
-//    func registerAccount(completion: @escaping (String?, Error?) -> Swift.Void)
-//    func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Swift.Void)
-//}
-
 public class Clang {
   let accountInteractor: AccountInteractorProtocol = AccountInteractor()
   let logActionInteractor: LogActionInteractorProtocol = LogActionInteractor()
   let tokenInteractor: TokenInteractorProtocol = TokenInteractor()
+  let propertiesInteractor: PropertiesInteractorProtocol = PropertiesInteractor()
 
   public init() {}
 
@@ -35,5 +31,9 @@ public class Clang {
 
   public func updateTokenOnServer(firebaseToken: String, completion: @escaping (Error?) -> Void) {
     tokenInteractor.sendTokenToServer(firebaseToken: firebaseToken, completion: completion)
+  }
+
+  public func updateProperties(data: [String: String], completion: @escaping (Error?) -> Void) {
+    propertiesInteractor.updateProperties(data: data, completion: completion)
   }
 }

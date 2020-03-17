@@ -17,8 +17,11 @@ private enum HTTPRequestMethod: String {
 
 /// APIErrors that coud be generated when performing API calls
 enum APIError: Error {
+  /// When the API call returns with noData this API error will be returned
   case noData
+  /// When the API call returns but data can't be parsed back to JSON this error will be returned
   case parseError
+  /// When the HTTPURLResponse statuscode  is NOT 200 or 204 we will return this error containing the statuscode
   case httpError(code: Int)
 }
 
@@ -31,6 +34,8 @@ protocol ServerServiceProtocol: class {
 }
 
 class ServerService: ServerServiceProtocol {
+
+  /// Create a storageService object to easily access the keychain
   private let storageService: StorageServiceProtocol = StorageService()
 
   /// Tag to used in debug prints for easy search in Xcode debug console
@@ -57,6 +62,10 @@ class ServerService: ServerServiceProtocol {
 
   // MARK: - ServerServiceProtocol methods
 
+  /// Perform a LogNotificationAction API call which will log a given NotificationEvent in the Clang backend
+  /// - Parameters:
+  ///   - notificationAction: The NotificationActionRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed
   internal func logNotificationAction(notificationAction: NotificationActionRequest, completion: @escaping (Error?) -> Void) {
     guard let url = URL(string: "\(Environment.rootURL)/api/v1/notification/action") else {
       preconditionFailure("\(logTag): Error cannot create URL for logging notifications")
@@ -97,6 +106,10 @@ class ServerService: ServerServiceProtocol {
     task.resume()
   }
 
+  /// Perform an LogEvent API call which will log a given event in the Clang backend
+  /// - Parameters:
+  ///   - eventLog: The EventLogRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed
   internal func logEvent(eventLog: EventLogRequest, completion: @escaping (Error?) -> Void) {
     guard let url = URL(string: "\(Environment.rootURL)/api/v1/notification/event") else {
       preconditionFailure("\(logTag): Error cannot create URL for event logging")
@@ -137,6 +150,10 @@ class ServerService: ServerServiceProtocol {
     task.resume()
   }
 
+  /// Perform an SaveToken API call to save the Firebase token on the Clang backend
+  /// - Parameters:
+  ///   - saveToken: The SaveTokenRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed.
   internal func saveToken(saveToken: SaveTokenRequest, completion: @escaping (Error?) -> Void) {
     guard let url = URL(string: "\(Environment.rootURL)/api/v1/token/save") else {
       preconditionFailure("Error cannot create URL for saving token")
@@ -176,6 +193,10 @@ class ServerService: ServerServiceProtocol {
     task.resume()
   }
 
+  /// Perform an RegisterAccount API call that will register this device in the Clang backend
+  /// - Parameters:
+  ///   - registerAccount: The RegisterAccount object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed. The completion handler will either contain a RegisterAccountResponse object or an Error object.
   internal func registerAccount(registerAccount: RegisterAccountRequest, completion: @escaping (RegisterAccountResponse?, Error?) -> Void) {
     guard let url = URL(string: "\(Environment.rootURL)/api/v1/account/register") else {
       preconditionFailure("\(logTag): Error cannot create URL for registering account")
@@ -219,6 +240,10 @@ class ServerService: ServerServiceProtocol {
     task.resume()
   }
 
+  /// Perform an UpdateProperties API call that will update given key/value properties on the Clang backend
+  /// - Parameters:
+  ///   - propertiesRequest: The PropertiesRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed.
   internal func updateProperties(propertiesRequest: PropertiesRequest, completion: @escaping (Error?) -> Void) {
     guard let url = URL(string: "\(Environment.rootURL)/api/v1/properties") else {
       preconditionFailure("\(logTag): Error cannot create URL for updating properties")
