@@ -14,7 +14,7 @@
     <a title="ServerService Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ClangNotifications Docs</a> (15% documented)</p>
+        <p><a href="../index.html">ClangNotifications Docs</a> (23% documented)</p>
         <p class="header-right"><a href="https://bitbucket.org/wi/evillage-ios"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -159,7 +159,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Create a storageService object to easily access the keychain</p>
 
                       </div>
                       <div class="declaration">
@@ -309,7 +309,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Perform a LogNotificationAction API call which will log a given NotificationEvent in the Clang backend</p>
 
                       </div>
                       <div class="declaration">
@@ -319,6 +319,37 @@
                           <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">logNotificationAction</span><span class="p">(</span><span class="nv">notificationAction</span><span class="p">:</span> <span class="kt"><a href="../Structs/NotificationActionRequest.html">NotificationActionRequest</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notificationAction</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The NotificationActionRequest object which will be decoded to JSON and added to the body of this request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler which will trigger when the request is either completed or failed</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -336,7 +367,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Perform an LogEvent API call which will log a given event in the Clang backend</p>
 
                       </div>
                       <div class="declaration">
@@ -346,6 +377,37 @@
                           <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">logEvent</span><span class="p">(</span><span class="nv">eventLog</span><span class="p">:</span> <span class="kt"><a href="../Structs/EventLogRequest.html">EventLogRequest</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eventLog</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The EventLogRequest object which will be decoded to JSON and added to the body of this request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler which will trigger when the request is either completed or failed</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -363,7 +425,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Perform an SaveToken API call to save the Firebase token on the Clang backend</p>
 
                       </div>
                       <div class="declaration">
@@ -373,6 +435,37 @@
                           <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">saveToken</span><span class="p">(</span><span class="nv">saveToken</span><span class="p">:</span> <span class="kt"><a href="../Structs/SaveTokenRequest.html">SaveTokenRequest</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>saveToken</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The SaveTokenRequest object which will be decoded to JSON and added to the body of this request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler which will trigger when the request is either completed or failed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -390,7 +483,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Perform an RegisterAccount API call that will register this device in the Clang backend</p>
 
                       </div>
                       <div class="declaration">
@@ -400,6 +493,37 @@
                           <pre class="highlight swift"><code><span class="kd">internal</span> <span class="kd">func</span> <span class="nf">registerAccount</span><span class="p">(</span><span class="nv">registerAccount</span><span class="p">:</span> <span class="kt"><a href="../Structs/RegisterAccountRequest.html">RegisterAccountRequest</a></span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Structs/RegisterAccountResponse.html">RegisterAccountResponse</a></span><span class="p">?,</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>registerAccount</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The RegisterAccount object which will be decoded to JSON and added to the body of this request</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The completion handler which will trigger when the request is either completed or failed. The completion handler will either contain a RegisterAccountResponse object or an Error object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -417,7 +541,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Perform an UpdateProperties API call that will update given key/value properties on the backend</p>
+                        <p>Perform an UpdateProperties API call that will update given key/value properties on the Clang backend</p>
 
                       </div>
                       <div class="declaration">
@@ -440,7 +564,7 @@
                               </td>
                               <td>
                                 <div>
-                                  <p>The PropertiesRequest struct which is going to be decoded to JSON to send in the body of the request</p>
+                                  <p>The PropertiesRequest object which will be decoded to JSON and added to the body of this request</p>
                                 </div>
                               </td>
                             </tr>
