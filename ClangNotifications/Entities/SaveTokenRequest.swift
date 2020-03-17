@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SaveTokenRequest: Codable {
+struct SaveTokenRequest: Codable {
   var userId: String
   var tokens: [String]
 

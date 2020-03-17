@@ -11,6 +11,12 @@ import Foundation
 import ClangNotifications
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+
+  /// The delegate method that will be called when a notification is received and will log the notification to the Clang backend
+  /// - Parameters:
+  ///   - center: The UNUserNotificationCenter object
+  ///   - response: The UNNotificationResponse object
+  ///   - completionHandler: The completionHandler that needs to be called if you're done in this method
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     print("Did receive: ", response)
 
@@ -28,6 +34,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
 
+  /// UIKit calls this method after it successfully registers your app with APNs
+  /// - Parameters:
+  ///   - application: The app object that initiated the remote-notification registration process.
+  ///   - deviceToken: A globally unique token that identifies this device to APNs. Send this token to the server that you use to generate remote notifications.
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     Messaging.messaging().apnsToken = deviceToken
   }
@@ -65,7 +75,7 @@ extension AppDelegate: MessagingDelegate {
           print("AppDelegate+NotificationExtension: \(error!)")
           return
         }
-        print("AppDelegate+NotificationExtension: USER IS \(userId)")
+        print("AppDelegate+NotificationExtension: USER IS \(userId ?? "")")
       }
 
       //        Clang().updateTokenOnServer(firebaseToken: result.token) { error in
@@ -118,7 +128,8 @@ extension AppDelegate {
       print("AppDelegate+NotificationExtension: FCM token is empty!")
       return
     }
-    print("AppDelegate+NotificationExtension: FB TOKEN: \(token)")
+
+    print("AppDelegate+NotificationExtension: Updating FCM TOKEN: \(token)")
     Clang().registerAccount(firebaseToken: token) { userId, error in
       guard error == nil else {
         print("AppDelegate: \(error!)")

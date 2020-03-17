@@ -19,11 +19,12 @@ protocol StorageServiceProtocol: class {
 
 class StorageService: StorageServiceProtocol {
 
+  /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(StorageService.self)"
 
   /// Save the userId  in keychain
   /// - Parameter userId: The userId of the current registered user
-  func saveUserId(userId: String) {
+  internal func saveUserId(userId: String) {
     let data = Data(from: userId)
     let status = KeyChainService.save(key: "clang_user_id", data: data)
     print("\(logTag): status: \(status)")
@@ -31,7 +32,7 @@ class StorageService: StorageServiceProtocol {
 
   /// Save the user secret in the keychain
   /// - Parameter secret: The secret we want to save in the keychain
-  func saveUserSecret(secret: String) {
+  internal func saveUserSecret(secret: String) {
     let data = Data(from: secret)
     let status = KeyChainService.save(key: "clang_user_secret", data: data)
     print("\(logTag): status: \(status)")
@@ -39,7 +40,7 @@ class StorageService: StorageServiceProtocol {
 
   /// Load the userId from the keychain
   /// - Returns: Return the userId as an optional String
-  func loadUserId() -> String? {
+  internal func loadUserId() -> String? {
     guard let receivedData = KeyChainService.load(key: "clang_user_id") else { return nil }
     let result = receivedData.to(type: String.self)
     print("\(logTag): user id: \(result)")
@@ -48,7 +49,7 @@ class StorageService: StorageServiceProtocol {
 
   /// Load the user secret from keychain
   /// - Returns: The user's secret as an optional String
-  func loadUserSecret() -> String? {
+  internal func loadUserSecret() -> String? {
     guard let receivedData = KeyChainService.load(key: "clang_user_secret") else { return nil }
     let result = receivedData.to(type: String.self)
     print("\(logTag): secret: \(result)")
@@ -57,7 +58,7 @@ class StorageService: StorageServiceProtocol {
 
   /// Get the UUID of this device
   /// - Returns: An optional String containing this device's uuid
-  func getDeviceId() -> String? {
+  internal func getDeviceId() -> String? {
     guard let uuid = UIDevice.current.identifierForVendor?.uuidString else { return nil }
     print("\(logTag): \(uuid)")
     return uuid

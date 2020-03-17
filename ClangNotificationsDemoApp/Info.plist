@@ -4,6 +4,8 @@
 <dict>
 	<key>CUSTOMER_ID</key>
 	<string>$(CUSTOMER_ID)</string>
+	<key>ROOT_URL</key>
+	<string>${ROOT_URL}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

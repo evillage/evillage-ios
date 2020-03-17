@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NotificationActionRequest: Codable {
+struct NotificationActionRequest: Codable {
   var notificationId: String
   var userId: String
   var actionId: String
-  let event: String
+  var event: String
 
   init(notificationId: String, userId: String, actionId: String) {
     self.notificationId = notificationId

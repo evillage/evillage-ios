@@ -8,14 +8,8 @@
 
 import Foundation
 
-class EventLogRequest: Codable {
+struct EventLogRequest: Codable {
   var userId: String
   var event: String
   var data: [String: String]
-
-  init(userId: String, event: String, data: [String: String]) {
-    self.userId = userId
-    self.event = event
-    self.data = data
-  }
 }

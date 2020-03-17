@@ -19,9 +19,10 @@ Pod::Spec.new do |spec|
   spec.version              = '0.0.1'
   spec.summary              = 'Clang Library for registering events @ clang env'
   spec.description          = <<-DESC
-                              Clang Library for registering events @ clang env
+                              Clang Library for registering events! @ clang env
   DESC
-  spec.homepage             = 'https://tanyapadalko@bitbucket.org/wi/evillage-ios.git'
+  # Change this to correct homepage when releasing!
+  spec.homepage             = 'https://bitbucket.org/wi/evillage-ios/src/master/'
 
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -30,7 +31,7 @@ Pod::Spec.new do |spec|
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-
+  # Change this to correct author
   spec.author               = { 'tpadalko' => 'tpadalko@worth.systems' }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -38,8 +39,8 @@ Pod::Spec.new do |spec|
   spec.platform             = :ios, '12.0'
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-
-  spec.source               = { :git => "https://tanyapadalko@bitbucket.org/wi/evillage-ios.git", :tag => "#{spec.version}" }
+  # TODO change this to correct Bitbucket repo and version
+  spec.source               = { :git => 'https://Sebas_S@bitbucket.org/wi/evillage-ios.git', :tag => spec.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

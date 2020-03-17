@@ -8,14 +8,8 @@
 
 import Foundation
 
-class RegisterAccountRequest: Codable {
+struct RegisterAccountRequest: Codable {
   var deviceId: String
   var token: String
   var customerId: String
-
-  init(deviceId: String, token: String, customerId: String) {
-    self.deviceId = deviceId.description
-    self.token = token
-    self.customerId = customerId
-  }
 }
