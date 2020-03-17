@@ -8,7 +8,7 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 * clone this repository (default working branch is master)
 * open project directory in terminal and run `pod install` (if you don't have CocoaPods installed the run first `sudo gem install cocoapods`)
 * Open .xcworkspace file in Xcode and you're ready for using it
-* Run the app on emulator or connect an IOS device (supported IOS is 12 and 13)
+* Run the app on simulator or connect an IOS device (supported IOS is 12 and 13). Remember push notifications won't work on the simulator.
 
 ### Customer Id set up ###
 Customer id as a unique identifier for an app which uses the library and set in the config file for build:
