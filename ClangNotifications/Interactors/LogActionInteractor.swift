@@ -17,8 +17,8 @@ class LogActionInteractor: LogActionInteractorProtocol {
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(LogActionInteractor.self)"
 
-  let serverService: ServerServiceProtocol = ServerService()
-  let storageService: StorageServiceProtocol = StorageService()
+  private let serverService: ServerServiceProtocol = ServerService()
+  private let storageService: StorageServiceProtocol = StorageService()
 
   func logNotificationAction(notificationId: String, actionId: String, completion: @escaping (Error?) -> Void) {
     let userId = storageService.loadUserId()

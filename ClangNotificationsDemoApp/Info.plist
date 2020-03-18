@@ -6,6 +6,8 @@
 	<string>63f4bf70-2a0d-4eb2-b35a-531da0a61b20</string>
 	<key>AUTHORIZATION_TOKEN</key>
 	<string>46b6dfb6-d5fe-47b1-b4a2-b92cbb30f0a5</string>
+	<key>BASE_URL</key>
+	<string>https://c4ac1473.ngrok.io</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

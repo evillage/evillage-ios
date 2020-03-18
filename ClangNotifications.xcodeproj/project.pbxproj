@@ -104,7 +104,6 @@
 		978C5B2523788C67001EDA9D /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
 		978C5B292378917C001EDA9D /* ClangNotificationsDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ClangNotificationsDemoApp.entitlements; sourceTree = "<group>"; };
 		978C5B2C23789E77001EDA9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		97FE244623D5F0DE002359FB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		C58AA6E99C6488185F192B6D /* Pods-ClangNotifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClangNotifications.debug.xcconfig"; path = "Target Support Files/Pods-ClangNotifications/Pods-ClangNotifications.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,7 +246,6 @@
 		9769A5E123D5F53F00F2DB4C /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				97FE244623D5F0DE002359FB /* Config.xcconfig */,
 				9769A5E223D5F55700F2DB4C /* Environment.swift */,
 			);
 			name = Config;
@@ -547,7 +545,6 @@
 /* Begin XCBuildConfiguration section */
 		9738BD652378849600AE0C08 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -611,7 +608,6 @@
 		};
 		9738BD662378849600AE0C08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -669,7 +665,7 @@
 		};
 		9738BD682378849600AE0C08 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
+			baseConfigurationReference = C58AA6E99C6488185F192B6D /* Pods-ClangNotifications.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -695,7 +691,7 @@
 		};
 		9738BD692378849600AE0C08 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97FE244623D5F0DE002359FB /* Config.xcconfig */;
+			baseConfigurationReference = 7BFD3C058E7A048D494A69F6 /* Pods-ClangNotifications.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

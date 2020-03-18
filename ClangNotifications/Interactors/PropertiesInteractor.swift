@@ -16,8 +16,8 @@ class PropertiesInteractor: PropertiesInteractorProtocol {
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(PropertiesInteractor.self)"
 
-  let serverService: ServerServiceProtocol = ServerService()
-  let storageService: StorageServiceProtocol = StorageService()
+  private let serverService: ServerServiceProtocol = ServerService()
+  private let storageService: StorageServiceProtocol = StorageService()
 
   func updateProperties(data: [String: String], completion: @escaping (Error?) -> Void) {
     guard let userId = storageService.loadUserId() else {

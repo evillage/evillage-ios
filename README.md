@@ -10,12 +10,14 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 * Open .xcworkspace file in Xcode and you're ready for using it
 * Run the app on simulator or connect an IOS device (supported IOS is 12 and 13). Remember push notifications won't work on the simulator.
 
-### Customer Id set up ###
-Customer id as a unique identifier for an app which uses the library and set in the config file for build:
-* Go to _your_workspace/ClangNotifications/Config.xcconfig_ and set _CUSTOMER_ID = your_application_unique_identifier_
-* In the application directory (not library) go to _info.plist_ and by using variable substitution in the _.plist_
-for the appropriate keys, substituting our custom variables from the xcconfig files:
-**CUSTOMER_ID** as a key and  value set to **$(CUSTOMER_ID)** which will be read from env config file.
+### Clang library setup ###
+To start using the Clang library you need to add some keys and values in your app's info.plist file. Add the following keys and values:
+
+1. BASE_URL
+2. AUTHORIZATION_TOKEN
+3. INTEGRATION_ID
+
+These values will be provided when you contact E-Village to start integrating with the Clang platform.
 
 ### Create a new version on Cocoapods
 Cocoapods used the tag system of bitbucket to specifcy which version is being used. When you want to create a new version of the ClangNotifications pod

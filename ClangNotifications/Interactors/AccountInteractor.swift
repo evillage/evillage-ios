@@ -16,8 +16,8 @@ class AccountInteractor: AccountInteractorProtocol {
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(AccountInteractor.self)"
 
-  let serverService: ServerServiceProtocol = ServerService()
-  let storageService: StorageServiceProtocol = StorageService()
+  private let serverService: ServerServiceProtocol = ServerService()
+  private let storageService: StorageServiceProtocol = StorageService()
 
   func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Void) {
     guard let deviceId = storageService.getDeviceId() else { return  }

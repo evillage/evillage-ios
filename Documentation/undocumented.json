@@ -304,36 +304,22 @@
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
       "line": 16,
-      "symbol": "Environment.PlistKeys.authorizationToken",
+      "symbol": "Environment.PlistKeys.baseURL",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
       "line": 17,
+      "symbol": "Environment.PlistKeys.authorizationToken",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
+      "line": 18,
       "symbol": "Environment.PlistKeys.integrationId",
       "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 22,
-      "symbol": "Environment.infoDictionary",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 48,
-      "symbol": "Environment.integrationId",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Extensions/DataExtension.swift",
-      "line": 12,
-      "symbol": "Data.init(from:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
