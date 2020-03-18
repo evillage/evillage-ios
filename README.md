@@ -26,7 +26,7 @@ perfrom the following steps
 1. Tag the version in Bitbucket with the new version number
 2. Change the **$(spec.version)** in the ClangNotifications.podspec file to the same version as you just tagged in bitbucket
 3. Open terminal and navigate to the root of the project and run `pod lib lint` to see if everything is correct
-4. run `pod trunk push ClangNotifications.podspec` in the same terminal to submit the code to Cocoapods
+4. run `pod repo push evillage-podspecs ClangNotifications.podspec` in the same terminal to submit the code to Cocoapods
 
 ### Generate documentaion
 To generate documentation for this project, follow these simple steps:
