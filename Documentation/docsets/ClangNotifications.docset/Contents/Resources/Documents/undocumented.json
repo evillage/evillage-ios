@@ -254,7 +254,14 @@
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Entities/SaveTokenRequest.swift",
-      "line": 15,
+      "line": 14,
+      "symbol": "SaveTokenRequest.integrationdId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Entities/SaveTokenRequest.swift",
+      "line": 16,
       "symbol": "SaveTokenRequest.init(userId:token:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

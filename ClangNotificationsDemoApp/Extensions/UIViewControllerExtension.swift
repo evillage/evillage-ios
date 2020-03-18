@@ -22,4 +22,14 @@ extension UIViewController {
       self.present(alertController, animated: true, completion: nil)
     }
   }
+
+  func showDefaultAlert(title: String, message: String, alertActions: [UIAlertAction]) {
+    DispatchQueue.main.async {
+      let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+      for alertAction in alertActions {
+        alertController.addAction(alertAction)
+      }
+      self.present(alertController, animated: true, completion: nil)
+    }
+  }
 }

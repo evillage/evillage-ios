@@ -9,10 +9,10 @@
 import UIKit
 import ClangNotifications
 
-/// Tag to used in debug prints for easy search in Xcode debug console
-private let logTag = "\(PollViewController.self)"
-
 class PollViewController: UIViewController {
+  /// Tag to used in debug prints for easy search in Xcode debug console
+  private let logTag = "\(PollViewController.self)"
+
   @IBOutlet weak var answer: UITextField!
 
   override func viewDidLoad() {
@@ -26,11 +26,15 @@ class PollViewController: UIViewController {
 
     Clang().logEvent(event: "POLL", data: eventData) { error in
       guard error == nil else {
-        print("\(logTag): \(error!)")
+        print("\(self.logTag): \(error!)")
         return
       }
-      print("\(logTag): Sent event!")
-      return
+      print("\(self.logTag): Sent event!")
+      let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+        self.dismiss(animated: true, completion: nil)
+      }
+
+      self.showDefaultAlert(title: "Poll answered", message: "Yay you've answered the poll, have a 🍪", alertActions: [alertAction])
     }
   }
 }

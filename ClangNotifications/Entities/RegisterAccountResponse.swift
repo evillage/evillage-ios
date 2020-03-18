@@ -10,5 +10,4 @@ import Foundation
 
 struct RegisterAccountResponse: Codable {
   var id: String
-  var secret: String
 }

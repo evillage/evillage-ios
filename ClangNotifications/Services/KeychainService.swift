@@ -39,10 +39,4 @@ class KeyChainService {
     guard SecItemCopyMatching(query as CFDictionary, &dataTypeRef) == noErr else { return nil }
     return dataTypeRef as? Data
   }
-
-  /// Create a UUID String and return it
-  /// - Returns: A newly created UUID string
-  class func createUniqueID() -> String {
-    return UUID().uuidString
-  }
 }

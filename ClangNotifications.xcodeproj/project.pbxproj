@@ -10,7 +10,6 @@
 		01553D8B8F78CA371137F30E /* Pods_ClangNotificationsDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4AD26798500FA8B09811B7 /* Pods_ClangNotificationsDemoApp.framework */; };
 		3257B60824210F2000E62F78 /* PropertiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257B60724210F2000E62F78 /* PropertiesRequest.swift */; };
 		3257B60A2421290D00E62F78 /* PropertiesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3257B6092421290C00E62F78 /* PropertiesInteractor.swift */; };
-		326A52FE241B96880044FE5E /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A52FD241B96880044FE5E /* DataExtension.swift */; };
 		326A5303241BA2B20044FE5E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A5302241BA2B20044FE5E /* UIViewControllerExtension.swift */; };
 		326A5305241BA4600044FE5E /* AppDelegate+NotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A5304241BA4600044FE5E /* AppDelegate+NotificationsExtension.swift */; };
 		9738BD642378849600AE0C08 /* ClangNotifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 9738BD622378849600AE0C08 /* ClangNotifications.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,7 +70,6 @@
 		2B9C89CEF241D3646B2FE6A1 /* Pods-ClangNotificationsDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClangNotificationsDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-ClangNotificationsDemoApp/Pods-ClangNotificationsDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		3257B60724210F2000E62F78 /* PropertiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesRequest.swift; sourceTree = "<group>"; };
 		3257B6092421290C00E62F78 /* PropertiesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertiesInteractor.swift; sourceTree = "<group>"; };
-		326A52FD241B96880044FE5E /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		326A5302241BA2B20044FE5E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		326A5304241BA4600044FE5E /* AppDelegate+NotificationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+NotificationsExtension.swift"; sourceTree = "<group>"; };
 		7BFD3C058E7A048D494A69F6 /* Pods-ClangNotifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClangNotifications.release.xcconfig"; path = "Target Support Files/Pods-ClangNotifications/Pods-ClangNotifications.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,14 +149,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		326A52FC241B96790044FE5E /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				326A52FD241B96880044FE5E /* DataExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		326A5301241BA29F0044FE5E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +182,6 @@
 		9738BD612378849600AE0C08 /* ClangNotifications */ = {
 			isa = PBXGroup;
 			children = (
-				326A52FC241B96790044FE5E /* Extensions */,
 				9738BD6A237885BF00AE0C08 /* Entities */,
 				9769A5E123D5F53F00F2DB4C /* Config */,
 				9738BD7C237885DF00AE0C08 /* Interactors */,
@@ -505,7 +494,6 @@
 				9769A5E323D5F55700F2DB4C /* Environment.swift in Sources */,
 				9738BD7A237885D300AE0C08 /* KeychainService.swift in Sources */,
 				9738BD73237885BF00AE0C08 /* SaveTokenRequest.swift in Sources */,
-				326A52FE241B96880044FE5E /* DataExtension.swift in Sources */,
 				3257B60824210F2000E62F78 /* PropertiesRequest.swift in Sources */,
 				3257B60A2421290D00E62F78 /* PropertiesInteractor.swift in Sources */,
 				9738BD7B237885D300AE0C08 /* ServerService.swift in Sources */,

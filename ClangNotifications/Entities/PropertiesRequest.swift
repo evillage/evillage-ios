@@ -11,4 +11,11 @@ import Foundation
 struct PropertiesRequest: Codable {
   var userId: String
   var data: [String: String]
+  var integrationId: String
+
+  init(userId: String, data: [String: String]) {
+    self.userId = userId
+    self.data = data
+    self.integrationId = Environment.integrationId
+  }
 }

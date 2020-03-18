@@ -30,7 +30,10 @@ class LoginViewController: UIViewController {
         return
       }
       print("\(logTag): Sent event!")
-      return
+      let alertAction = UIAlertAction(title: "OK", style: .default) { _ in
+        self.dismiss(animated: true, completion: nil)
+      }
+      self.showDefaultAlert(title: "Login successfull", message: "You've successfully logged in!", alertActions: [alertAction])
     }
   }
 }

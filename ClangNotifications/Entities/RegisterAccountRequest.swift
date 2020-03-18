@@ -11,5 +11,11 @@ import Foundation
 struct RegisterAccountRequest: Codable {
   var deviceId: String
   var token: String
-  var customerId: String
+  var integrationId: String
+
+  init(deviceId: String, token: String) {
+    self.deviceId = deviceId
+    self.token = token
+    self.integrationId = Environment.integrationId
+  }
 }

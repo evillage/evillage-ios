@@ -20,7 +20,10 @@ class PropertiesInteractor: PropertiesInteractorProtocol {
   let storageService: StorageServiceProtocol = StorageService()
 
   func updateProperties(data: [String: String], completion: @escaping (Error?) -> Void) {
-    guard let userId = storageService.loadUserId() else { return }
+    guard let userId = storageService.loadUserId() else {
+      print("\(self.logTag): UserId is nil!")
+      return
+    }
 
     let propertiesRequestModel = PropertiesRequest(userId: userId, data: data)
     serverService.updateProperties(propertiesRequest: propertiesRequestModel) { error in

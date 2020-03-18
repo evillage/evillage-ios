@@ -13,11 +13,13 @@ struct NotificationActionRequest: Codable {
   var userId: String
   var actionId: String
   var event: String
+  var integrationId: String
 
   init(notificationId: String, userId: String, actionId: String) {
     self.notificationId = notificationId
     self.userId = userId
     self.actionId = actionId
     self.event = "Notification"
+    self.integrationId = Environment.integrationId
   }
 }

@@ -12,4 +12,12 @@ struct EventLogRequest: Codable {
   var userId: String
   var event: String
   var data: [String: String]
+  var integrationId: String
+
+  init(userId: String, event: String, data: [String: String]) {
+    self.userId = userId
+    self.event = event
+    self.data = data
+    self.integrationId = Environment.integrationId
+  }
 }

@@ -30,7 +30,21 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func registerAccount(_ sender: UIButton) {
-    self.showDefaultAlert(title: "Thanks for registering with us", message: "🤩")
+    guard let firebaseToken = (UIApplication.shared.delegate as? AppDelegate)?.getFirebaseToken() else {
+      print("\(self.logTag): Error FirebaseToken is nil!")
+      return
+    }
+
+    Clang().registerAccount(firebaseToken: firebaseToken) { id, error in
+      guard error == nil else {
+        print("\(self.logTag): \(error!)")
+        self.showDefaultAlert(title: "Oopsie", message: "There was an error registering you're account! Please try again later")
+        return
+      }
+
+      print("Successfully performend API Call userID = \(id ?? "")")
+      self.showDefaultAlert(title: "Thanks for registering with us", message: "Your userId = \(id ?? "")")
+    }
   }
 
   @IBAction func shareLocation(_ sender: UIButton) {

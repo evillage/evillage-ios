@@ -36,9 +36,8 @@ class LogActionInteractor: LogActionInteractorProtocol {
   }
 
   func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Void) {
-//            let userId = storageService.loadUserId()
-    let userId = "iOS"
-    let eventRequest = EventLogRequest(userId: userId, event: event, data: data)
+    let userId = storageService.loadUserId()
+    let eventRequest = EventLogRequest(userId: userId!, event: event, data: data)
     serverService.logEvent(eventLog: eventRequest) { error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")

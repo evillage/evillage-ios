@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Wisely" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ach-BJ-HLf">
-                                <rect key="frame" x="139" y="263" width="137" height="25"/>
+                                <rect key="frame" x="139" y="262.5" width="136.5" height="25.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -31,7 +31,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="registerAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QHZ-YU-Vf3"/>
                                             <segue destination="erj-yv-qmh" kind="showDetail" id="y5t-uy-2Cp"/>
                                         </connections>
                                     </button>
@@ -52,7 +51,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="registerAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cwo-Kw-OzZ"/>
                                             <segue destination="Llk-WT-tgQ" kind="showDetail" id="b8M-PX-w9L"/>
                                         </connections>
                                     </button>
@@ -63,7 +61,6 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="registerAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LgX-rd-i35"/>
                                             <action selector="shareLocation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i90-Ac-hzz"/>
                                         </connections>
                                     </button>
@@ -99,7 +96,7 @@
         <scene sceneID="V5Z-Pf-uLl">
             <objects>
                 <viewController id="Llk-WT-tgQ" customClass="PollViewController" customModule="ClangNotificationsDemoApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Znu-nU-4BB" customClass="Poll">
+                    <view key="view" contentMode="scaleToFill" id="Znu-nU-4BB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -119,7 +116,6 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="pollAnsweEvent:" destination="Llk-WT-tgQ" eventType="touchUpInside" id="Hab-K8-hvT"/>
-                                    <segue destination="Z0r-ci-VjP" kind="showDetail" id="Imp-dI-ZBp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,41 +141,6 @@
             </objects>
             <point key="canvasLocation" x="882.60869565217399" y="383.70535714285711"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="5gV-WX-NO5">
-            <objects>
-                <viewController id="Z0r-ci-VjP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rum-Gn-lIq">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You're all done, have a  🍪" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roV-AP-n1x">
-                                <rect key="frame" x="20" y="394" width="374" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="111-eA-a8u">
-                                <rect key="frame" x="20" y="431" width="374" height="30"/>
-                                <state key="normal" title="Done"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="111-eA-a8u" firstAttribute="top" secondItem="roV-AP-n1x" secondAttribute="bottom" constant="16" id="139-HR-NbU"/>
-                            <constraint firstItem="0QH-ot-3Pb" firstAttribute="trailing" secondItem="111-eA-a8u" secondAttribute="trailing" constant="20" id="Iwm-d4-4IB"/>
-                            <constraint firstItem="roV-AP-n1x" firstAttribute="leading" secondItem="0QH-ot-3Pb" secondAttribute="leading" constant="20" id="S6A-2v-JhL"/>
-                            <constraint firstItem="111-eA-a8u" firstAttribute="leading" secondItem="0QH-ot-3Pb" secondAttribute="leading" constant="20" id="hzG-KF-YKI"/>
-                            <constraint firstItem="0QH-ot-3Pb" firstAttribute="trailing" secondItem="roV-AP-n1x" secondAttribute="trailing" constant="20" id="t1C-LV-q9r"/>
-                            <constraint firstItem="roV-AP-n1x" firstAttribute="centerY" secondItem="0QH-ot-3Pb" secondAttribute="centerY" id="xPc-BJ-rsC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="0QH-ot-3Pb"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Mys-M4-dHk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1749" y="128"/>
-        </scene>
         <!--Login View Controller-->
         <scene sceneID="S6a-Rh-E8B">
             <objects>
@@ -204,12 +165,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWq-vj-EFX">
-                                <rect key="frame" x="20" y="448" width="374" height="34"/>
+                                <rect key="frame" x="20" y="447.5" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginEvent:" destination="erj-yv-qmh" eventType="touchUpInside" id="FPX-vT-hng"/>
-                                    <segue destination="Z0r-ci-VjP" kind="showDetail" id="jqF-i8-cF2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -233,7 +193,4 @@
             <point key="canvasLocation" x="869.56521739130437" y="-284.59821428571428"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Imp-dI-ZBp"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -21,7 +21,7 @@ class AccountInteractor: AccountInteractorProtocol {
 
   func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Void) {
     guard let deviceId = storageService.getDeviceId() else { return  }
-    let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: firebaseToken, customerId: Environment.customerId)
+    let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: firebaseToken)
 
     serverService.registerAccount(registerAccount: registerAccountModel) { registerAccountResponse, error in
       guard error == nil else {
@@ -29,8 +29,8 @@ class AccountInteractor: AccountInteractorProtocol {
         completion(nil, error)
         return
       }
+
       self.storageService.saveUserId(userId: registerAccountResponse?.id ?? "")
-      self.storageService.saveUserSecret(secret: registerAccountResponse?.secret ?? "") // User secret to be removed
       completion(registerAccountResponse?.id, nil)
     }
   }

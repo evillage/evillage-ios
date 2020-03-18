@@ -22,7 +22,6 @@ public class Clang {
 
   public func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Void) {
     logActionInteractor.logEvent(event: event, data: data, completion: completion)
-
   }
 
   public func logNotification(notificationId: String, actionId: String, completion: @escaping (Error?) -> Void) {

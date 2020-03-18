@@ -73,16 +73,10 @@ extension AppDelegate: MessagingDelegate {
       // Check for a saved token here, when there is one we know that this device is already registered
       // we only need to update the token then. Else register this device for an account
       if let token = UserDefaults.standard.string(forKey: "FirebaseToken"), !token.isEmpty {
-        Clang().updateTokenOnServer(firebaseToken: result.token) { error in
-          guard error == nil else {
-            print("AppDelegate+NotificationExtension: \(error!)")
-            return
-          }
-
-          print("AppDelegate+NotificationExtension: Succesfully updated FCM token to \(token)")
-          UserDefaults.standard.set(result.token, forKey: "FirebaseToken")
-        }
+        print("AppDelegate+NotificationExtension: Found FirebaseToken in UserDefaults no need to re-register")
+        self.updateFCMToken(token: token)
       } else {
+        print("AppDelegate+NotificationExtension: No FirebaseToken found in UserDefaults going to regiser")
         Clang().registerAccount(firebaseToken: result.token) { userId, error in
           guard error == nil else {
             print("AppDelegate+NotificationExtension: \(error!)")
@@ -126,24 +120,23 @@ extension AppDelegate {
       application.registerUserNotificationSettings(settings)
     }
     application.registerForRemoteNotifications()
-    updateFCMToken()
   }
 
   /// Update the FCM token and re-register with Clang
-  func updateFCMToken() {
-    guard let token = Messaging.messaging().fcmToken else {
-      print("AppDelegate+NotificationExtension: FCM token is empty!")
-      return
-    }
-
+  func updateFCMToken(token: String) {
     print("AppDelegate+NotificationExtension: Updating FCM TOKEN: \(token)")
-    Clang().registerAccount(firebaseToken: token) { userId, error in
+    Clang().updateTokenOnServer(firebaseToken: token) { error in
       guard error == nil else {
-        print("AppDelegate: \(error!)")
+        print("AppDelegate+NotificationExtension: Error updating token on server")
         return
       }
 
-      print("AppDelegate+NotificationExtension: USER IS: \(userId ?? "")")
+      print("AppDelegate+NotificationExtension: Updating token on server successfull")
+      UserDefaults.standard.set(token, forKey: "FirebaseToken")
     }
+  }
+
+  func getFirebaseToken() -> String? {
+    Messaging.messaging().fcmToken
   }
 }
