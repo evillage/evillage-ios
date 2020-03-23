@@ -5,8 +5,8 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 
 ### How to run the application ###
 
-* clone this repository (default working branch is master)
-* open project directory in terminal and run `pod install` (if you don't have CocoaPods installed the run first `sudo gem install cocoapods`)
+* Clone this repository (default working branch is master)
+* Open project directory in terminal and run `pod install` (if you don't have CocoaPods installed the run first `sudo gem install cocoapods`)
 * Open .xcworkspace file in Xcode and you're ready for using it
 * Run the app on simulator or connect an IOS device (supported IOS is 12 and 13). Remember push notifications won't work on the simulator.
 
@@ -34,6 +34,15 @@ To generate documentation for this project, follow these simple steps:
 1. Install Jazzy on your mac by going to terminal and run 'sudo gem install jazzy' this will install the required files need to generate documentation
 2. Still in terminal navigate to the root of the project and run 'jazzy' the documentation will be generated in the /Documentation folder
 3. Enjoy the generated documentation!
+
+### Use the Clang in your own project
+
+* Install cocoapods by opening terminal and run `sudo gem install cocoapods`
+* Open the root folder of your project and run `pod init` this will create a POD file which will contain all pod files you want to use in your project.
+* Open the POD file in a text editor of your choice and uncomment the line where it says: `platform :iOS, 'XX.X'` and change the `XX.X` to `12.0`.
+* Below the `target 'project_name' do` add `souce 'https://bitbucket.org/wi/evillage-podspecs.git'`
+* Below the `# Pods for project_name` add `pod 'ClangNotifications'`
+* Head back to the terminal and run `pod install` in the root project of your project (where the POD file is located)
 
 ### Links ###
 
