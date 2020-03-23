@@ -38,8 +38,8 @@ To generate documentation for this project, follow these simple steps:
 ### Using the Clang library in your own project
 
 * Install cocoapods by opening terminal and run `sudo gem install cocoapods`
-* Open the root folder of your project and run `pod init` this will create a POD file which will contain all pod files you want to use in your project.
-* Open the POD file in a text editor of your choice and uncomment the line where it says: `platform :iOS, 'XX.X'` and change the `XX.X` to `12.0`.
+* Open the root folder of your project and run `pod init` this will create a `POD` file which will contain all pod libraries you want to use in your project.
+* Open the `POD` file in a text editor of your choice (I recommend Visual Studio Code) and uncomment the line where it says: `platform :iOS, 'XX.X'` and change the `XX.X` to `12.0`.
 * Below the `target 'project_name' do` add `souce 'https://bitbucket.org/wi/evillage-podspecs.git'`
 * Below the `# Pods for project_name` add `pod 'ClangNotifications'`
 * Head back to the terminal and run `pod install` in the root project of your project (where the POD file is located)
