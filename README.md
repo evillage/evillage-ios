@@ -1,4 +1,6 @@
-# README #
+# Clang #
+
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.0.2-blue)](https://img.shields.io/badge/pod-v0.0.2-blue)
 
 This is a proof of concept with a demo IOS application which uses our custom [library for notifications]()
 App is written in Swift, uses Firebase cloud messaging for notifications.
