@@ -35,7 +35,7 @@ To generate documentation for this project, follow these simple steps:
 2. Still in terminal navigate to the root of the project and run 'jazzy' the documentation will be generated in the /Documentation folder
 3. Enjoy the generated documentation!
 
-### Use the Clang library in your own project
+### Using the Clang library in your own project
 
 * Install cocoapods by opening terminal and run `sudo gem install cocoapods`
 * Open the root folder of your project and run `pod init` this will create a POD file which will contain all pod files you want to use in your project.
