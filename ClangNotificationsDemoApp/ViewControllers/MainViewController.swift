@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
       return
     }
 
-    Clang().registerAccount(firebaseToken: firebaseToken) { id, error in
+    Clang().registerAccount(fcmToken: firebaseToken) { id, error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")
         self.showDefaultAlert(title: "Oopsie", message: "There was an error registering you're account! Please try again later")
@@ -89,7 +89,7 @@ extension MainViewController: CLLocationManagerDelegate {
       let logData = ["latitude": location.coordinate.latitude.description,
                      "longitude": location.coordinate.longitude.description]
 
-      Clang().logEvent(event: "LOCATION_SHARE", data: logData) { (error) in
+      Clang().logEvent(eventName: "LOCATION_SHARE", eventData: logData) { (error) in
         guard error == nil else {
           print("\(self.logTag): \(error!)")
           self.showDefaultAlert(title: "Oopsie", message: error!.localizedDescription)

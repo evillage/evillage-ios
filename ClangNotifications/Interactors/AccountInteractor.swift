@@ -9,19 +9,22 @@
 import Foundation
 
 protocol AccountInteractorProtocol: class {
-  func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Void)
+  func registerAccount(fcmToken: String, completion: @escaping (String?, Error?) -> Void)
 }
 
 class AccountInteractor: AccountInteractorProtocol {
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(AccountInteractor.self)"
 
+  /// Reference to the ServerService protocol to do the API calls
   private let serverService: ServerServiceProtocol = ServerService()
+
+  /// Reference to the StorageService protocol to get the deviceId
   private let storageService: StorageServiceProtocol = StorageService()
 
-  func registerAccount(firebaseToken: String, completion: @escaping (String?, Error?) -> Void) {
+  func registerAccount(fcmToken: String, completion: @escaping (String?, Error?) -> Void) {
     guard let deviceId = storageService.getDeviceId() else { return  }
-    let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: firebaseToken)
+    let registerAccountModel = RegisterAccountRequest(deviceId: deviceId, token: fcmToken)
 
     serverService.registerAccount(registerAccount: registerAccountModel) { registerAccountResponse, error in
       guard error == nil else {
@@ -30,8 +33,8 @@ class AccountInteractor: AccountInteractorProtocol {
         return
       }
 
-      self.storageService.saveUserId(userId: registerAccountResponse?.id ?? "")
-      completion(registerAccountResponse?.id, nil)
+      self.storageService.saveUserId(userId: registerAccountResponse?.userId ?? "")
+      completion(registerAccountResponse?.userId ?? "", nil)
     }
   }
 }

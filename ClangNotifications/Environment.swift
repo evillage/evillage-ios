@@ -8,13 +8,18 @@
 
 import Foundation
 
+/// Contains Key/Values to get all the information we need from the info.plist
 public enum Environment {
 
   // MARK: - Keys
 
+  /// The Info.plist keys we want to retrieve data from
   enum PlistKeys {
+    /// The base url of the API calls
     static let baseURL = "BASE_URL"
+    /// The token we use in the authorization header of the APi calls
     static let authorizationToken = "AUTHORIZATION_TOKEN"
+    /// The id we use in the body of the API calls
     static let integrationId = "INTEGRATION_ID"
   }
 

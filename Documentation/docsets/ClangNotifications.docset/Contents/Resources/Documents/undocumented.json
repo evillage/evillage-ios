@@ -1,83 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 11,
-      "symbol": "Clang",
-      "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 12,
-      "symbol": "Clang.accountInteractor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 13,
-      "symbol": "Clang.logActionInteractor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 14,
-      "symbol": "Clang.tokenInteractor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 15,
-      "symbol": "Clang.propertiesInteractor",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 17,
-      "symbol": "Clang.init()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 19,
-      "symbol": "Clang.registerAccount(firebaseToken:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 23,
-      "symbol": "Clang.logEvent(event:data:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 27,
-      "symbol": "Clang.logNotification(notificationId:actionId:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 31,
-      "symbol": "Clang.updateTokenOnServer(firebaseToken:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Clang.swift",
-      "line": 35,
-      "symbol": "Clang.updateProperties(data:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Entities/EventLogRequest.swift",
       "line": 11,
       "symbol": "EventLogRequest",
@@ -295,41 +218,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 15,
-      "symbol": "Environment.PlistKeys",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 16,
-      "symbol": "Environment.PlistKeys.authorizationToken",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 17,
-      "symbol": "Environment.PlistKeys.integrationId",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 22,
-      "symbol": "Environment.infoDictionary",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Environment.swift",
-      "line": 48,
-      "symbol": "Environment.integrationId",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
       "line": 11,
       "symbol": "AccountInteractorProtocol",
@@ -339,7 +227,7 @@
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
       "line": 12,
-      "symbol": "AccountInteractorProtocol.registerAccount(firebaseToken:completion:)",
+      "symbol": "AccountInteractorProtocol.registerAccount(fcmToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -352,22 +240,8 @@
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
-      "line": 19,
-      "symbol": "AccountInteractor.serverService",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
-      "line": 20,
-      "symbol": "AccountInteractor.storageService",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
-      "line": 22,
-      "symbol": "AccountInteractor.registerAccount(firebaseToken:completion:)",
+      "line": 25,
+      "symbol": "AccountInteractor.registerAccount(fcmToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
@@ -541,42 +415,7 @@
     },
     {
       "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
-      "line": 29,
-      "symbol": "ServerServiceProtocol.registerAccount(registerAccount:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
-      "line": 30,
-      "symbol": "ServerServiceProtocol.saveToken(saveToken:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
-      "line": 31,
-      "symbol": "ServerServiceProtocol.logNotificationAction(notificationAction:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
-      "line": 32,
-      "symbol": "ServerServiceProtocol.logEvent(eventLog:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
-      "line": 33,
-      "symbol": "ServerServiceProtocol.updateProperties(propertiesRequest:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
-      "line": 36,
+      "line": 60,
       "symbol": "ServerService",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"

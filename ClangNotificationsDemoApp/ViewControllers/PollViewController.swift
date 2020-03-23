@@ -24,7 +24,7 @@ class PollViewController: UIViewController {
     let userAnswer = answer.text!
     let eventData = ["answer": userAnswer]
 
-    Clang().logEvent(event: "POLL", data: eventData) { error in
+    Clang().logEvent(eventName: "POLL", eventData: eventData) { error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")
         return

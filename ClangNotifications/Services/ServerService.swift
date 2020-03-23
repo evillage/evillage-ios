@@ -26,10 +26,34 @@ enum APIError: Error {
 }
 
 protocol ServerServiceProtocol: class {
+  /// Perform an RegisterAccount API call that will register this device in the Clang backend
+  /// - Parameters:
+  ///   - registerAccount: The RegisterAccount object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed. The completion handler will either contain a RegisterAccountResponse object or an Error object.
   func registerAccount(registerAccount: RegisterAccountRequest, completion: @escaping (RegisterAccountResponse?, Error?) -> Void)
+
+  /// Perform an SaveToken API call to save the Firebase token on the Clang backend
+  /// - Parameters:
+  ///   - saveToken: The SaveTokenRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed.
   func saveToken(saveToken: SaveTokenRequest, completion: @escaping (Error?) -> Void)
+
+  /// Perform a LogNotificationAction API call which will log a given NotificationEvent in the Clang backend
+  /// - Parameters:
+  ///   - notificationAction: The NotificationActionRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed
   func logNotificationAction(notificationAction: NotificationActionRequest, completion: @escaping (Error?) -> Void)
+
+  /// Perform an LogEvent API call which will log a given event in the Clang backend
+   /// - Parameters:
+   ///   - eventLog: The EventLogRequest object which will be decoded to JSON and added to the body of this request
+   ///   - completion: The completion handler which will trigger when the request is either completed or failed
   func logEvent(eventLog: EventLogRequest, completion: @escaping (Error?) -> Void)
+
+  /// Perform an UpdateProperties API call that will update given key/value properties on the Clang backend
+  /// - Parameters:
+  ///   - propertiesRequest: The PropertiesRequest object which will be decoded to JSON and added to the body of this request
+  ///   - completion: The completion handler which will trigger when the request is either completed or failed.
   func updateProperties(propertiesRequest: PropertiesRequest, completion: @escaping (Error?) -> Void)
 }
 
@@ -225,7 +249,7 @@ class ServerService: ServerServiceProtocol {
       // parse the result as JSON, since that's what the API provides
       do {
         let registerAccountResponse = try JSONDecoder().decode(RegisterAccountResponse.self, from: responseData)
-        print("The ID is: \(registerAccountResponse.id)")
+        print("The ID is: \(registerAccountResponse.userId)")
         completion(registerAccountResponse, nil)
       } catch let error {
         print("\(self.logTag): Error parsing response from POST on /account/register with error: \(error.localizedDescription)")

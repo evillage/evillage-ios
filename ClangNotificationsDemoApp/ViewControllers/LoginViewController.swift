@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
     let userEmail = email.text!
     let eventData = ["email": userEmail]
 
-    Clang().logEvent(event: "LOGIN", data: eventData) { error in
+    Clang().logEvent(eventName: "LOGIN", eventData: eventData) { error in
       guard error == nil else {
         print("\(logTag): \(error!)")
         return
