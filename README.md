@@ -1,6 +1,12 @@
 # Clang #
 
 [![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.0.2-blue)](https://img.shields.io/badge/pod-v0.0.2-blue)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-red)](https://img.shields.io/badge/Carthage-compatible-red)
+[![SPM Compatible](https://img.shields.io/badge/SPM-compatible-red)](https://img.shields.io/badge/SPM-compatible-red)
+[![Platforms](https://img.shields.io/badge/platforms-ios%20%7C%20macos%20%7C%20tvos%20%7C%20watchos-lightgrey](https://img.shields.io/badge/platforms-ios%20%7C%20macos%20%7C%20tvos%20%7C%20watchos-lightgrey)
+[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-11.2-blue.svg)](https://developer.apple.com/xcode)
+[![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 This is a proof of concept with a demo IOS application which uses our custom [library for notifications]()
 App is written in Swift, uses Firebase cloud messaging for notifications.
