@@ -37,7 +37,7 @@ perfrom the following steps
 3. Open terminal and navigate to the root of the project and run `pod lib lint` to see if everything is correct
 4. run `pod repo push evillage-podspecs ClangNotifications.podspec` in the same terminal to submit the code to Cocoapods
 
-### Generate documentaion
+### Generate documentation
 To generate documentation for this project, follow these simple steps:
 
 1. Install Jazzy on your mac by going to terminal and run 'sudo gem install jazzy' this will install the required files need to generate documentation
