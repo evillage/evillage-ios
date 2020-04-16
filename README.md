@@ -1,7 +1,7 @@
 # Clang #
 
 [![Platforms](https://img.shields.io/badge/platforms-ios%20%7C%20macos%20%7C%20tvos%20%7C%20watchos-lightgrey.svg)](https://img.shields.io/badge/platforms-ios%20%7C%20macos%20%7C%20tvos%20%7C%20watchos-lightgrey.svg)
-[![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.0.2-blue)](https://img.shields.io/badge/pod-v0.0.2-blue)
+[![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.0.4-blue)](https://img.shields.io/badge/pod-v0.0.4-blue)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-not%20compatible-red.svg)](https://img.shields.io/badge/Carthage-not%20compatible-red.svg)
 [![SPM Compatible](https://img.shields.io/badge/SPM-not%20compatible-red.svg)](https://img.shields.io/badge/SPM-not%20compatible-red.svg)
 [![Documentation](https://img.shields.io/badge/documentation-68%25-brightgreen.svg)](https://img.shields.io/badge/documentation-68%25-brightgreen.svg)
