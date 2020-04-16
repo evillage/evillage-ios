@@ -1,257 +1,257 @@
 {
   "warnings": [
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
       "line": 11,
       "symbol": "AccountInteractorProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
       "line": 12,
       "symbol": "AccountInteractorProtocol.registerAccount(fcmToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
       "line": 15,
       "symbol": "AccountInteractor",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/AccountInteractor.swift",
       "line": 25,
       "symbol": "AccountInteractor.registerAccount(fcmToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 11,
       "symbol": "LogActionInteractorProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 12,
       "symbol": "LogActionInteractorProtocol.logNotificationAction(notificationId:actionId:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 13,
       "symbol": "LogActionInteractorProtocol.logEvent(event:data:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 16,
       "symbol": "LogActionInteractor",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 20,
       "symbol": "LogActionInteractor.serverService",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 21,
       "symbol": "LogActionInteractor.storageService",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 23,
       "symbol": "LogActionInteractor.logNotificationAction(notificationId:actionId:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/LogActionInteractor.swift",
       "line": 38,
       "symbol": "LogActionInteractor.logEvent(event:data:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
       "line": 11,
       "symbol": "PropertiesInteractorProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
       "line": 12,
       "symbol": "PropertiesInteractorProtocol.updateProperties(data:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
       "line": 15,
       "symbol": "PropertiesInteractor",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
       "line": 19,
       "symbol": "PropertiesInteractor.serverService",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
       "line": 20,
       "symbol": "PropertiesInteractor.storageService",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/PropertiesInteractor.swift",
       "line": 22,
       "symbol": "PropertiesInteractor.updateProperties(data:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
       "line": 11,
       "symbol": "TokenInteractorProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
       "line": 12,
       "symbol": "TokenInteractorProtocol.sendTokenToServer(firebaseToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
       "line": 15,
       "symbol": "TokenInteractor",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
       "line": 19,
       "symbol": "TokenInteractor.serverService",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
       "line": 20,
       "symbol": "TokenInteractor.storageService",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Interactors/TokenInteractor.swift",
       "line": 22,
       "symbol": "TokenInteractor.sendTokenToServer(firebaseToken:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/KeychainService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/KeychainService.swift",
       "line": 11,
       "symbol": "KeyChainService",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
       "line": 14,
       "symbol": "HTTPRequestMethod.post",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
       "line": 15,
       "symbol": "HTTPRequestMethod.get",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
       "line": 28,
       "symbol": "ServerServiceProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/ServerService.swift",
       "line": 60,
       "symbol": "ServerService",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 12,
       "symbol": "Keychainids",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 13,
       "symbol": "Keychainids.userId",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 16,
       "symbol": "StorageServiceProtocol",
       "symbol_kind": "source.lang.swift.decl.protocol",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 17,
       "symbol": "StorageServiceProtocol.saveUserId(userId:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 18,
       "symbol": "StorageServiceProtocol.loadUserId()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 19,
       "symbol": "StorageServiceProtocol.getDeviceId()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
+      "file": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios/ClangNotifications/Services/StorageService.swift",
       "line": 22,
       "symbol": "StorageService",
       "symbol_kind": "source.lang.swift.decl.class",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/sebastiaan/Documents/Xcode projects/evillage-ios"
+  "source_directory": "/Users/sebastiaan/Documents/Xcode_projects/evillage-ios"
 }
