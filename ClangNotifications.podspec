@@ -11,9 +11,9 @@ Pod::Spec.new do |spec|
   spec.version              = '0.0.4'
   spec.license              = { :type => 'MIT', :file => 'FILE_LICENSE' }
   spec.summary              = 'Clang Library for registering events @ clang env'
-  spec.homepage             = 'https://bitbucket.org/wi/evillage-ios/src/master/'
+  spec.homepage             = 'https://github.com/evillage/evillage-ios'
   spec.author               = { 'e-Village' => 'info@e-village.nl' }
-  spec.source               = { :git => 'https://bitbucket.org/wi/evillage-ios.git', :tag => spec.version }
+  spec.source               = { :git => 'https://github.com/evillage/evillage-ios.git', :tag => spec.version }
   spec.description          = <<-DESC
                               Clang Library for registering events! @ clang env
   DESC
