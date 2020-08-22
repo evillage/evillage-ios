@@ -33,8 +33,8 @@ class AccountInteractor: AccountInteractorProtocol {
         return
       }
 
-      self.storageService.saveUserId(userId: registerAccountResponse?.userId ?? "")
-      completion(registerAccountResponse?.userId ?? "", nil)
+      self.storageService.saveUserId(userId: registerAccountResponse?.id ?? "")
+      completion(registerAccountResponse?.id ?? "", nil)
     }
   }
 }

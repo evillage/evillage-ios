@@ -87,7 +87,7 @@ class ServerService: ServerServiceProtocol {
   ///   - notificationAction: The NotificationActionRequest object which will be decoded to JSON and added to the body of this request
   ///   - completion: The completion handler which will trigger when the request is either completed or failed
   internal func logNotificationAction(notificationAction: NotificationActionRequest, completion: @escaping (Error?) -> Void) {
-    guard let url = URL(string: "\(Environment.baseURL)/api/v1/notification/action") else {
+    guard let url = URL(string: "\(Environment.baseURL)/push/notification/action") else {
       preconditionFailure("\(logTag): Error cannot create URL for logging notifications")
     }
 
@@ -131,7 +131,7 @@ class ServerService: ServerServiceProtocol {
   ///   - eventLog: The EventLogRequest object which will be decoded to JSON and added to the body of this request
   ///   - completion: The completion handler which will trigger when the request is either completed or failed
   internal func logEvent(eventLog: EventLogRequest, completion: @escaping (Error?) -> Void) {
-    guard let url = URL(string: "\(Environment.baseURL)/api/v1/notification/event") else {
+    guard let url = URL(string: "\(Environment.baseURL)/push/notification/event") else {
       preconditionFailure("\(logTag): Error cannot create URL for event logging")
     }
 
@@ -175,7 +175,7 @@ class ServerService: ServerServiceProtocol {
   ///   - saveToken: The SaveTokenRequest object which will be decoded to JSON and added to the body of this request
   ///   - completion: The completion handler which will trigger when the request is either completed or failed.
   internal func saveToken(saveToken: SaveTokenRequest, completion: @escaping (Error?) -> Void) {
-    guard let url = URL(string: "\(Environment.baseURL)/api/v1/token/save") else {
+    guard let url = URL(string: "\(Environment.baseURL)/push/token/save") else {
       preconditionFailure("Error cannot create URL for saving token")
     }
 
@@ -218,7 +218,7 @@ class ServerService: ServerServiceProtocol {
   ///   - registerAccount: The RegisterAccount object which will be decoded to JSON and added to the body of this request
   ///   - completion: The completion handler which will trigger when the request is either completed or failed. The completion handler will either contain a RegisterAccountResponse object or an Error object.
   internal func registerAccount(registerAccount: RegisterAccountRequest, completion: @escaping (RegisterAccountResponse?, Error?) -> Void) {
-    guard let url = URL(string: "\(Environment.baseURL)/api/v1/account/register") else {
+    guard let url = URL(string: "\(Environment.baseURL)/push/account/register") else {
       preconditionFailure("\(logTag): Error cannot create URL for registering account")
     }
 
@@ -248,8 +248,10 @@ class ServerService: ServerServiceProtocol {
 
       // parse the result as JSON, since that's what the API provides
       do {
+        let json = String(data: responseData, encoding: String.Encoding.utf8)
+        print("\(self.logTag): Got back \(String(describing: json))")
         let registerAccountResponse = try JSONDecoder().decode(RegisterAccountResponse.self, from: responseData)
-        print("The ID is: \(registerAccountResponse.userId)")
+        print("The ID is: \(registerAccountResponse.id)")
         completion(registerAccountResponse, nil)
       } catch let error {
         print("\(self.logTag): Error parsing response from POST on /account/register with error: \(error.localizedDescription)")
@@ -264,7 +266,7 @@ class ServerService: ServerServiceProtocol {
   ///   - propertiesRequest: The PropertiesRequest object which will be decoded to JSON and added to the body of this request
   ///   - completion: The completion handler which will trigger when the request is either completed or failed.
   internal func updateProperties(propertiesRequest: PropertiesRequest, completion: @escaping (Error?) -> Void) {
-    guard let url = URL(string: "\(Environment.baseURL)/api/v1/properties") else {
+    guard let url = URL(string: "\(Environment.baseURL)/push/properties") else {
       preconditionFailure("\(logTag): Error cannot create URL for updating properties")
     }
 

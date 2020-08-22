@@ -12,5 +12,5 @@ import Foundation
 struct RegisterAccountResponse: Codable {
 
   /// The user id we get from the backend as a response to the Register api call
-  var userId: String
+  var id: String
 }
