@@ -25,7 +25,7 @@ class TokenInteractor: TokenInteractorProtocol {
       return
     }
 
-    let tokenRequest = SaveTokenRequest(userId: userId, token: firebaseToken)
+    let tokenRequest = SaveTokenRequest(id: userId, token: firebaseToken)
     serverService.saveToken(saveToken: tokenRequest) { error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")
