@@ -9,7 +9,7 @@
 [![Xcode](https://img.shields.io/badge/Xcode-11.2-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
-This is a proof of concept with a demo IOS application which uses our custom [library for notifications]()
+This repository contains the Clang Mobile SDK with a demo IOS application which uses our custom [library for notifications]()
 App is written in Swift, uses Firebase cloud messaging for notifications.
 
 ### How to run the application ###
