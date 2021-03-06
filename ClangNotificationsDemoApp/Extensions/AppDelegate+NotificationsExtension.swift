@@ -47,7 +47,7 @@ extension AppDelegate: MessagingDelegate {
   ///   - application: The centralized point of control and coordination for apps running in iOS.
   ///   - userInfo: The userInfo containing the payload of the remote notification
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-    print("AppDelegate+NotificationExtension: Remote Message \(userInfo)")
+    print("AppDelegate+NotificationExtension: didReceiveRemoteNotification \(userInfo)")
   }
 
   /// Tells the app that a remote notification arrived that indicates there is data to be fetched.
@@ -57,6 +57,18 @@ extension AppDelegate: MessagingDelegate {
   ///   - completionHandler: The block to execute when the download operation is complete
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     print("AppDelegate+NotificationExtension: Remote Message \(userInfo)")
+
+    if Clang().isValidNotification(userInfo: userInfo) {
+        do {
+            let notification = try Clang().createNotification(userInfo: userInfo)
+            
+            print(notification)
+        } catch Clang.ClangError.missingFieldError(let missingField) {
+            print("Error creating Notification object: Missing field \(missingField)")
+        } catch {
+            print("Unexpected error: \(error).")
+        }
+    }
   }
 
   /// Firebase messaging delegate for receiving FCM token
@@ -72,7 +84,7 @@ extension AppDelegate: MessagingDelegate {
       print("AppDelegate+NotificationExtension: Found FirebaseToken in UserDefaults no need to re-register")
       self.updateFCMToken(fcmToken: fcmToken)
     } else {
-      print("AppDelegate+NotificationExtension: No FirebaseToken found in UserDefaults going to regiser")
+      print("AppDelegate+NotificationExtension: No FirebaseToken found in UserDefaults going to register")
 
       Clang().registerAccount(fcmToken: fcmToken) { id, error in
         guard error == nil else {

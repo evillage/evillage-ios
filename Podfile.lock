@@ -1,5 +1,5 @@
 PODS:
-  - ClangNotifications (0.0.6)
+  - ClangNotifications (0.0.7)
   - Firebase/Core (6.30.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.7.2)
@@ -124,6 +124,6 @@ SPEC CHECKSUMS:
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SwiftLint: 4154893c73a4c52d6240195507eb7a3e3c64087e
 
-PODFILE CHECKSUM: 92dad07c7767677c292be319d3e5a56bbf7d56c8
+PODFILE CHECKSUM: 7b82f2c401dc26d44882f53a88a621fa80c06d77
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

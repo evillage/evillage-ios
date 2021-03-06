@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>336061610543-5qegvqquq5drmd769gf483v70q5nngfk.apps.googleusercontent.com</string>
+	<string>5396010653-aohp916le9q6ip4ng24o49ovh4cum2i2.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.336061610543-5qegvqquq5drmd769gf483v70q5nngfk</string>
+	<string>com.googleusercontent.apps.5396010653-aohp916le9q6ip4ng24o49ovh4cum2i2</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAcbqujyY-IO4-mXnzfmH9u4PuyzLJHbWI</string>
+	<string>AIzaSyBkyQl4nSHgrkJq-xKsfN1iZs3NO465VI4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>336061610543</string>
+	<string>5396010653</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>nl.worth.ClangNotificationsDemoApp</string>
+	<string>nl.e-village.ClangNotificationsDemoApp</string>
 	<key>PROJECT_ID</key>
-	<string>test-a04ac</string>
+	<string>mokup-1cb6c</string>
 	<key>STORAGE_BUCKET</key>
-	<string>test-a04ac.appspot.com</string>
+	<string>mokup-1cb6c.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:336061610543:ios:5a0ca6fc237b48b67924da</string>
+	<string>1:5396010653:ios:31ba8de29afa1afdbfa674</string>
 	<key>DATABASE_URL</key>
-	<string>https://test-a04ac.firebaseio.com</string>
+	<string>https://mokup-1cb6c.firebaseio.com</string>
 </dict>
 </plist>
