@@ -58,11 +58,10 @@ extension AppDelegate: MessagingDelegate {
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     print("AppDelegate+NotificationExtension: Remote Message \(userInfo)")
 
-    if Clang().isValidNotification(userInfo: userInfo) {
+    if Clang().isClangNotification(userInfo: userInfo) {
         do {
             let notification = try Clang().createNotification(userInfo: userInfo)
-            
-            print(notification)
+            print("Got notification from Clang with id \(notification.id), title \"\(notification.title)\"")
         } catch Clang.ClangError.missingFieldError(let missingField) {
             print("Error creating Notification object: Missing field \(missingField)")
         } catch {

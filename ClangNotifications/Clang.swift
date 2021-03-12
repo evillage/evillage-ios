@@ -14,14 +14,14 @@ public class Clang {
         case missingFieldError(field: String)
     }
     
-    public struct Notification {
-        var id: String
-        var category: String
-        var type: String
-        var title: String
-        var message: String
-        var actions: [String: String]
-        var customFields: [String: String]
+    public struct ClangNotification {
+        public var id: String
+        public var category: String
+        public var type: String
+        public var title: String
+        public var message: String
+        public var actions: [String: String]
+        public var customFields: [String: String]
         
         init(userInfo: [AnyHashable: Any]) throws {
             actions = [:]
@@ -161,14 +161,14 @@ public class Clang {
         propertiesInteractor.updateProperties(data: data, completion: completion)
     }
     
-    public func isValidNotification(userInfo: [AnyHashable: Any]) -> Bool {
+    public func isClangNotification(userInfo: [AnyHashable: Any]) -> Bool {
         guard let type: String = userInfo[AnyHashable("type")] as? String else {
             return false
         }
         return type == "clang"
     }
     
-    public func createNotification(userInfo: [AnyHashable: Any]) throws -> Clang.Notification {
-        return try Notification(userInfo: userInfo)
+    public func createNotification(userInfo: [AnyHashable: Any]) throws -> Clang.ClangNotification {
+        return try ClangNotification(userInfo: userInfo)
     }
 }
