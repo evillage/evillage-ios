@@ -13,6 +13,10 @@ protocol TokenInteractorProtocol: class {
 }
 
 class TokenInteractor: TokenInteractorProtocol {
+  enum TokenInteractorError: Error {
+    case userIdMissing
+  }
+  
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(TokenInteractor.self)"
 
@@ -22,6 +26,7 @@ class TokenInteractor: TokenInteractorProtocol {
   func sendTokenToServer(firebaseToken: String, completion: @escaping (Error?) -> Void) {
     guard let userId = storageService.loadUserId() else {
       print("\(self.logTag): UserId is nil!")
+      completion(TokenInteractorError.userIdMissing)
       return
     }
 
