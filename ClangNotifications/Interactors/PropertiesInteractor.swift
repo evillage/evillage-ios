@@ -13,6 +13,10 @@ protocol PropertiesInteractorProtocol: class {
 }
 
 class PropertiesInteractor: PropertiesInteractorProtocol {
+    enum PropertiesInteractorError: Error {
+      case userIdMissing
+  }
+  
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(PropertiesInteractor.self)"
 
@@ -22,6 +26,7 @@ class PropertiesInteractor: PropertiesInteractorProtocol {
   func updateProperties(data: [String: String], completion: @escaping (Error?) -> Void) {
     guard let userId = storageService.loadUserId() else {
       print("\(self.logTag): UserId is nil!")
+      completion(PropertiesInteractorError.userIdMissing)
       return
     }
 
@@ -29,6 +34,7 @@ class PropertiesInteractor: PropertiesInteractorProtocol {
     serverService.updateProperties(propertiesRequest: propertiesRequestModel) { error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")
+        completion(error!)
         return
       }
 
