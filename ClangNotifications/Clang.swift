@@ -97,7 +97,6 @@ public class Clang {
         }
     }
 
-
     /// The AccountInteractor reference
     private let accountInteractor: AccountInteractorProtocol = AccountInteractor()
 

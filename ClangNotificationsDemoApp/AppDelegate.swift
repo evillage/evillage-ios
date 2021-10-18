@@ -19,8 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
     registerForPushNotifications(application)
+    registerNotificationCategories()
     return true
   }
+    
+    private func registerNotificationCategories() {
+        let openBoardAction = UNNotificationAction(identifier: UNNotificationDefaultActionIdentifier, title: "Open Board", options: UNNotificationActionOptions.foreground)
+        let contentAddedCategory = UNNotificationCategory(identifier: "content_added_notification", actions: [openBoardAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
+        UNUserNotificationCenter.current().setNotificationCategories([contentAddedCategory])
+    }
 
   // MARK: UISceneSession Lifecycle
 

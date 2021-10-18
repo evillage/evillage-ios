@@ -1,0 +1,20 @@
+{
+  "kind": "in-app-message",
+  "version": 1,
+  "metadata": {
+    "id": "VQNBHF5cI4xPUaqGqPy_neZDBVxeNTYuqfgUziae6tV53_6G8j9VtatTlYeUgTDWLAaswOW6KF8QYxevYXuZ8IBwfhzaWHa8Ml7jcz3Ot2rPAs6-NbVHWBjoYUE",
+    "name": "Subject",
+    "timestamp": "2021-10-11T13:38:45+02:00"
+  },
+  "body": {
+    "type": "text/html",
+    "content": "Dit is een <strong>voorbeeldbericht</strong><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpSoVBzuIOASsThZEizhqFYpQIdQKrTqYXPohNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9SaBHjwXE/3t173L0DhHqZaVbHOKDptplOJsRsbkUMvaIbAkIYRlxmljErSSn4jq97BPh6F+NZ/uf+HL1q3mJAQCSeYYZpE68TT23aBud94ggrySrxOfGYSRckfuS64vEb56LLAs+MmJn0HHGEWCy2sdLGrGRqxHHiqKrplC9kPVY5b3HWylXWvCd/YTivLy9xneYQkljAIiSIUFDFBsqwEaNVJ8VCmvYTPv5B1y+RSyHXBhg55lGBBtn1g//B726twuSElxROAJ0vjvMxAoR2gUbNcb6PHadxAgSfgSu95a/UgelP0mstLXoE9G0DF9ctTdkDLneAgSdDNmVXCtIUCgXg/Yy+KQf03wI9q15vzX2cPgAZ6ip1AxwcAqNFyl7zeXdXe2//nmn29wNyoXKnG9AkiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UJAgckK3VfhAgAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"height:1px !important;width:1px !important;border: 0 !important;margin: 0 !important;padding: 0 !important\" />"
+  },
+  "actions": [
+    {
+      "id": "close",
+      "icon": "data:image/png;base64,",
+      "title": "Close message"
+    }
+  ]
+}

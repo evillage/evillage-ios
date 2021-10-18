@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
   }
 
   @IBAction func loginEvent(_ sender: UIButton) {
-    let userEmail = email.text!
+    let userEmail = "Jeffrey@livecast.nl"
     let eventData = ["email": userEmail]
 
     Clang().logEvent(eventName: "LOGIN", eventData: eventData) { error in

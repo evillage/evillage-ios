@@ -1,0 +1,35 @@
+{
+  "accounts": [
+    "abef8ab1-68dc-4947-add5-82b75fbe5373"
+  ],
+  "content": {
+    "apns": {
+      "headers": {
+        "apns-priority": "5"
+      },
+      "payload": {
+        "aps": {
+          "sound": "default",
+          "category": "clang",
+          "content_available": true
+        }
+      },
+      "fcm_options": []
+    },
+    "android": {
+      "priority": "high",
+      "notification": []
+    },
+    "data": {
+      "type": "in-app-message",
+      "notificationId": "VQNBHF5cI4xPUaqGqPy_neZDBVxeNTYuqfgUziae6tV53_6G8j9VtatTlYeUgTDWLAaswOW6KF8QYxevYXuZ8IBwfhzaWHa8Ml7jcz3Ot2rPAs6-NbVHWBjoYUE",
+      "notification_foreground": "true",
+      "notificationCategory": "clang",
+      "payload": "eyJraW5kIjoiaW4tYXBwLW1lc3NhZ2UiLCJ2ZXJzaW9uIjoxLCJtZXRhZGF0YSI6eyJpZCI6IlZRTkJIRjVjSTR4UFVhcUdxUHlfbmVaREJWeGVOVFl1cWZnVXppYWU2dFY1M182RzhqOVZ0YXRUbFllVWdURFdMQWFzd09XNktGOFFZeGV2WVh1WjhJQndmaHphV0hhOE1sN2pjejNPdDJyUEFzNi1OYlZIV0Jqb1lVRSIsIm5hbWUiOiJTdWJqZWN0IiwidGltZXN0YW1wIjoiMjAyMS0xMC0xMVQxMzozODo0NSswMjowMCJ9LCJib2R5Ijp7InR5cGUiOiJ0ZXh0XC9odG1sIiwiY29udGVudCI6IkRpdCBpcyBlZW4gPHN0cm9uZz52b29yYmVlbGRiZXJpY2h0PFwvc3Ryb25nPjxpbWcgc3JjPVwiZGF0YTppbWFnZVwvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBQUVBQUFBQkNBWUFBQUFmRmNTSkFBQUJoR2xEUTFCSlEwTWdjSEp2Wm1sc1pRQUFLSkY5a1QxSXcwQWN4VjlUcFNvVkJ6dUlPQVNzVGhaRWl6aHFGWXBRSWRRS3JUcVlYUG9oTkdsSVVsd2NCZGVDZ3grTFZRY1haMTBkWEFWQjhBUEV6YzFKMFVWS1wvRjlTYUJIandYRVwvM3QxNzNMMERoSHFaYVZiSE9LRHB0cGxPSnNSc2JrVU12YUliQWtJWVJseG1sakVyU1NuNGpxOTdCUGg2RitOWlwvdWYrSEwxcTNtSkFRQ1NlWVlacEU2OFRUMjNhQnVkOTRnZ3J5U3J4T2ZHWVNSY2tmdVM2NHZFYjU2TExBcytNbUpuMEhIR0VXQ3kyc2RMR3JHUnF4SEhpcUtycGxDOWtQVlk1YjNIV3lsWFd2Q2RcL1lUaXZMeTl4bmVZUWtsakFJaVNJVUZERkJzcXdFYU5WSjhWQ212WVRQdjVCMXkrUlN5SFhCaGc1NWxHQkJ0bjFnXC9cL0I3MjZ0d3VTRWx4Uk9BSjB2anZNeEFvUjJnVWJOY2I2UEhhZHhBZ1NmZ1N1OTVhXC9VZ2VsUDBtc3RMWG9FOUcwREY5Y3RUZGtETG5lQWdTZERObVZYQ3RJVUNnWGdcL1l5K0tRZjAzd0k5cTE1dnpYMmNQZ0FaNmlwMUF4d2NBcU5GeWw3emVYZFhlMlwvXC9ubW4yOXdOeW9YS25HOUFraXdBQUFBWmlTMGRFQVA4QVwvd0RcL29MMm5rd0FBQUFsd1NGbHpBQUF1SXdBQUxpTUJlS1VcL2RnQUFBQWQwU1UxRkIrVUpBZ2NrSzNWZmhBZ0FBQUFaZEVWWWRFTnZiVzFsYm5RQVEzSmxZWFJsWkNCM2FYUm9JRWRKVFZCWGdRNFhBQUFBQzBsRVFWUUkxMk5nQUFJQUFBVUFBZUltQlpzQUFBQUFTVVZPUks1Q1lJST1cIiB3aWR0aD1cIjFcIiBoZWlnaHQ9XCIxXCIgYm9yZGVyPVwiMFwiIGFsdD1cIlwiIHN0eWxlPVwiaGVpZ2h0OjFweCAhaW1wb3J0YW50O3dpZHRoOjFweCAhaW1wb3J0YW50O2JvcmRlcjogMCAhaW1wb3J0YW50O21hcmdpbjogMCAhaW1wb3J0YW50O3BhZGRpbmc6IDAgIWltcG9ydGFudFwiIFwvPiJ9LCJhY3Rpb25zIjpbeyJpZCI6ImNsb3NlIiwiaWNvbiI6ImRhdGE6aW1hZ2VcL3BuZztiYXNlNjQsIiwidGl0bGUiOiJDbG9zZSBtZXNzYWdlIn1dfQ=="
+    },
+    "notification": {
+      "title": "Subject",
+      "body": "Dit is een <strong>voorbeeldbericht</strong><img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TpSoVBzuIOASsThZEizhqFYpQIdQKrTqYXPohNGlIUlwcBdeCgx+LVQcXZ10dXAVB8APEzc1J0UVK/F9SaBHjwXE/3t173L0DhHqZaVbHOKDptplOJsRsbkUMvaIbAkIYRlxmljErSSn4jq97BPh6F+NZ/uf+HL1q3mJAQCSeYYZpE68TT23aBud94ggrySrxOfGYSRckfuS64vEb56LLAs+MmJn0HHGEWCy2sdLGrGRqxHHiqKrplC9kPVY5b3HWylXWvCd/YTivLy9xneYQkljAIiSIUFDFBsqwEaNVJ8VCmvYTPv5B1y+RSyHXBhg55lGBBtn1g//B726twuSElxROAJ0vjvMxAoR2gUbNcb6PHadxAgSfgSu95a/UgelP0mstLXoE9G0DF9ctTdkDLneAgSdDNmVXCtIUCgXg/Yy+KQf03wI9q15vzX2cPgAZ6ip1AxwcAqNFyl7zeXdXe2//nmn29wNyoXKnG9AkiwAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+UJAgckK3VfhAgAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAAC0lEQVQI12NgAAIAAAUAAeImBZsAAAAASUVORK5CYII=\" width=\"1\" height=\"1\" border=\"0\" alt=\"\" style=\"height:1px !important;width:1px !important;border: 0 !important;margin: 0 !important;padding: 0 !important\" />"
+    }
+  }
+}
