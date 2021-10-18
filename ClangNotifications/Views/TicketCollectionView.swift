@@ -67,6 +67,16 @@ open class TicketCollectionView: UIView, UICollectionViewDelegate, UICollectionV
         reversetickets = listOftickets.reversed()
         collectionView.reloadData()
         bullets.numberOfPages = listOftickets.count
+        
+            
+            if bullets.numberOfPages == 1 {
+                
+                bullets.alpha = 0
+                
+            } else {
+                
+                bullets.alpha = 1
+            }
             
         }
     }
