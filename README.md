@@ -53,6 +53,17 @@ To generate documentation for this project, follow these simple steps:
 * Below the `# Pods for project_name` add `pod 'ClangNotifications'`
 * Head back to the terminal and run `pod install` in the root project of your project (where the POD file is located)
 
+### Call visueal ticket in your own project
+
+* To make a notification ticket anywhere in your app, check the demo app and the file AppDelegate+NotificationsExtension.swift
+* In the function "didReceiveRemoteNotification" ask for the string of the  payload let body = userInfo["payload"] as? String ?? ""
+* Then place it in the function buildTheTickets like so:
+
+ClangFunctions().buildTheTickets(parant: (UIApplication.shared.keyWindow?.rootViewController)!, toadd: ClangFunctions().convertJSON(toConvert: body)) 
+
+* adding the UIApplication.shared.keyWindow?.rootViewController to parant: 
+* and convert the body string to readable JSON in the app ClangFunctions().convertJSON(toConvert: body)
+
 ### Links ###
 
 * [Firebase project](https://console.firebase.google.com/project/test-a04ac/overview) (for access ask oboekesteijn@worth.systems or tpadalko@worth.systems)
