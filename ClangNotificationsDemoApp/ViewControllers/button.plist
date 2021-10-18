@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>color</key>
+		<string>#e6e6e6</string>
+		<key>icoon</key>
+		<string>sea</string>
+		<key>image</key>
+		<string>360-product-view-animated-gif.gif</string>
+		<key>title</key>
+		<string>Come to the sea</string>
+		<key>id</key>
+		<string>1</string>
+	</dict>
+</array>
+</plist>

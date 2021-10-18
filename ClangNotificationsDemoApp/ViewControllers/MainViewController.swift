@@ -38,7 +38,7 @@ class MainViewController: UIViewController {
     Clang().registerAccount(fcmToken: firebaseToken) { id, error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")
-        self.showDefaultAlert(title: "Oopsie", message: "There was an error registering you're account! Please try again later")
+        self.showDefaultAlert(title: "Sorry", message: "There was an error registering you're account! Please try again later")
         return
       }
 
@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
   @IBAction func shareLocation(_ sender: UIButton) {
     let status = CLLocationManager.authorizationStatus()
     if status == .denied || status == .restricted || !CLLocationManager.locationServicesEnabled() {
-      self.showDefaultAlert(title: "Oopsie", message: "You need to enable location usage for this app in settings")
+      self.showDefaultAlert(title: "Sorry", message: "You need to enable location usage for this app in settings")
       return
     }
 
@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
     Clang().updateProperties(data: ["Pizza": "Calzone"]) { error in
       guard error == nil else {
         print("\(self.logTag): \(error!)")
-        self.showDefaultAlert(title: "Oopsie", message: "Failed to set property with error: \(error!)")
+        self.showDefaultAlert(title: "Sorry", message: "Failed to set property with error: \(error!)")
         return
       }
 

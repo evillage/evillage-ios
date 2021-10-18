@@ -11,7 +11,7 @@ import Foundation
 import ClangNotifications
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    
+
     /// The delegate method that will be called when a notification is received and will log the notification to the Clang backend
     /// - Parameters:
     ///   - center: The UNUserNotificationCenter object
@@ -33,7 +33,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 }
 
 extension AppDelegate: MessagingDelegate {
-    
+
     /// UIKit calls this method after it successfully registers your app with APNs
     /// - Parameters:
     ///   - application: The app object that initiated the remote-notification registration process.
@@ -56,7 +56,16 @@ extension AppDelegate: MessagingDelegate {
     ///   - userInfo: The payload of the remote notification
     ///   - completionHandler: The block to execute when the download operation is complete
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("AppDelegate+NotificationExtension: Remote Message \(userInfo)")
+        print("AppDelegate+NotificationExtension: Received FCM Token: \(userInfo)")
+        
+        if userInfo.keys .contains("gcm.notification.data") {
+        let body = userInfo["gcm.notification.data"] as? String ?? ""
+            ClangFunctions().buildTheTickets(parant: (UIApplication.shared.keyWindow?.rootViewController)!, toadd: ClangFunctions().convertDemoJSON(toConvert: body))
+        } else {
+            let body = userInfo["payload"] as? String ?? ""
+            ClangFunctions().buildTheTickets(parant: (UIApplication.shared.keyWindow?.rootViewController)!, toadd: ClangFunctions().convertJSON(toConvert: body))
+        }
+      
         if Clang().isClangNotification(userInfo: userInfo) {
             do {
                 let notification = try Clang().createNotification(userInfo: userInfo)
