@@ -59,7 +59,7 @@ public class TicketView: UIView, WKUIDelegate, WKNavigationDelegate {
         sizeAdjust()
         paranting = parant
     }
-   
+    
     public func build(json: String, parant: NSObject) {
         
         let copyController = parant as? UIViewController
@@ -273,6 +273,15 @@ public class TicketView: UIView, WKUIDelegate, WKNavigationDelegate {
                     originals.first?.reverseit()
                     originals.first?.collectionView.reloadData()
                     originals.first?.bullets.numberOfPages = (originals.first?.listOftickets.count)!
+                    
+                    if originals.first?.bullets.numberOfPages == 1 {
+                        
+                        originals.first?.bullets.alpha = 0
+                        
+                    } else {
+                        
+                        originals.first?.bullets.alpha = 1
+                    }
                     
                     if (originals.first?.listOftickets.count)! == 0 {
                         
