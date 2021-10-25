@@ -59,11 +59,12 @@ public class ClangFunctions {
         
         return ""
     }
-    public func buildTheTickets(parant: NSObject, toadd: String) {
+    public func buildTheTickets(parent: NSObject, toAdd: String) {
 
-        if  parant is UINavigationController {
+        let body = convertJSON(toConvert: toAdd)
+        if  parent is UINavigationController {
             
-            let navigationController = parant as? UINavigationController
+            let navigationController = parent as? UINavigationController
             let copyController = navigationController?.viewControllers.last
             var go = true
               
@@ -72,14 +73,14 @@ public class ClangFunctions {
                 if view .isKind(of: TicketCollectionView.self) {
                     go = false
                     let originals = copyController!.view.subviews.compactMap { $0 as? TicketCollectionView }
-                    originals.first?.buildTheTickets(stringtoAdd: toadd)
+                    originals.first?.buildTheTickets(stringtoAdd: body)
                 }
             }
             
             if go {
               let ticketCollectionView = TicketCollectionView(frame: CGRect(x: 0, y: 80, width: copyController!.view.frame.size.width, height: (copyController!.view.frame.size.height/3)))
-              ticketCollectionView.build(json: toadd, parant: copyController!)
-              ticketCollectionView.buildTheTickets(stringtoAdd: toadd)
+              ticketCollectionView.build(json: body, parant: copyController!)
+              ticketCollectionView.buildTheTickets(stringtoAdd: body)
             }
             
         } else {
@@ -93,14 +94,14 @@ public class ClangFunctions {
                 if view .isKind(of: TicketCollectionView.self) {
                     go = false
                     let originals = copyController!.view.subviews.compactMap { $0 as? TicketCollectionView }
-                    originals.first?.buildTheTickets(stringtoAdd: toadd)
+                    originals.first?.buildTheTickets(stringtoAdd: body)
                 }
             }
             
             if go {
               let ticketCollectionView = TicketCollectionView(frame: CGRect(x: 0, y: 80, width: copyController!.view.frame.size.width, height: (copyController!.view.frame.size.height/3)))
-              ticketCollectionView.build(json: toadd, parant: copyController!)
-              ticketCollectionView.buildTheTickets(stringtoAdd: toadd)
+              ticketCollectionView.build(json: body, parant: copyController!)
+              ticketCollectionView.buildTheTickets(stringtoAdd: body)
             }
             
         }
