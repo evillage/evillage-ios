@@ -59,10 +59,9 @@ To generate documentation for this project, follow these simple steps:
 * In the function "didReceiveRemoteNotification" ask for the string of the  payload let body = userInfo["payload"] as? String ?? ""
 * Then place it in the function buildTheTickets like so:
 
-ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toadd: body) 
+ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: body) 
 
 * adding the UIApplication.shared.keyWindow?.rootViewController to parant: 
-* and convert the body string to readable JSON in the app ClangFunctions().convertJSON(toConvert: body)
 
 ### Links ###
 
