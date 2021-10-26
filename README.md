@@ -1,4 +1,4 @@
-# Clang #
+# CanopyDeploy #
 
 [![Platforms](https://img.shields.io/badge/platforms-ios%20%7C%20macos%20%7C%20tvos%20%7C%20watchos-lightgrey.svg)](https://img.shields.io/badge/platforms-ios%20%7C%20macos%20%7C%20tvos%20%7C%20watchos-lightgrey.svg)
 [![CocoaPods Compatible](https://img.shields.io/badge/pod-v0.0.5-blue)](https://img.shields.io/badge/pod-v0.0.4-blue)
@@ -9,7 +9,7 @@
 [![Xcode](https://img.shields.io/badge/Xcode-11.2-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the Clang Mobile SDK with a demo IOS application which uses our custom [library for notifications]()
+This repository contains the CanopyDeploy Mobile SDK with a demo IOS application which uses our custom [library for notifications]()
 App is written in Swift, uses Firebase cloud messaging for notifications.
 
 ### How to run the application ###
@@ -19,14 +19,14 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 * Open .xcworkspace file in Xcode and you're ready for using it
 * Run the app on simulator or connect an IOS device (supported IOS is 12 and 13). Remember push notifications won't work on the simulator.
 
-### Clang library setup ###
-To start using the Clang library you need to add some keys and values in your app's info.plist file. Add the following keys and values:
+### CanopyDeploy library setup ###
+To start using the CanopyDeploy library you need to add some keys and values in your app's info.plist file. Add the following keys and values:
 
 1. BASE_URL
 2. AUTHORIZATION_TOKEN
 3. INTEGRATION_ID
 
-These values will be provided when you contact E-Village to start integrating with the Clang platform.
+These values will be provided when you contact E-Village to start integrating with the CanopyDeploy platform.
 
 ### Create a new version on Cocoapods
 Cocoapods used the tag system of bitbucket to specifcy which version is being used. When you want to create a new version of the ClangNotifications pod
@@ -44,7 +44,7 @@ To generate documentation for this project, follow these simple steps:
 2. Still in terminal navigate to the root of the project and run 'jazzy' the documentation will be generated in the /Documentation folder
 3. Enjoy the generated documentation!
 
-### Using the Clang library in your own project
+### Using the CanopyDeploy library in your own project
 
 * Install cocoapods by opening terminal and run `sudo gem install cocoapods`
 * Open the root folder of your project and run `pod init` this will create a `POD` file which will contain all pod libraries you want to use in your project.
@@ -53,7 +53,7 @@ To generate documentation for this project, follow these simple steps:
 * Below the `# Pods for project_name` add `pod 'ClangNotifications'`
 * Head back to the terminal and run `pod install` in the root project of your project (where the POD file is located)
 
-### Call visueal ticket in your own project
+### Call visual ticket in your own project
 
 * To make a notification ticket anywhere in your app, check the demo app and the file AppDelegate+NotificationsExtension.swift
 * In the function "didReceiveRemoteNotification" ask for the string of the  payload let body = userInfo["payload"] as? String ?? ""
