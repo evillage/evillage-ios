@@ -48,7 +48,7 @@ public class ClangFunctions {
                 
                 if let myDictionary = dictonary {
                     
-                    var payload = base64Decoded(string: (myDictionary["payload"] as? String)!)
+                    var payload = base64Decoded(string: (myDictionary["cd_payload"] as? String)!)
                     payload = payload?.replacingOccurrences(of: "\\", with: "").description
                     return payload!      
                 }
