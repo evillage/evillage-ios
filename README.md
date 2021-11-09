@@ -64,9 +64,7 @@ To generate documentation for this project, follow these simple steps:
 
       ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: body) 
 
-* adding the  
-* 
-      UIApplication.shared.keyWindow?.rootViewController to parant: 
+* adding the UIApplication.shared.keyWindow?.rootViewController to parant: 
 
 ### Links ###
 
