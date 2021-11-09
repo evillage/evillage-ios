@@ -58,11 +58,11 @@ To generate documentation for this project, follow these simple steps:
 * To make a notification ticket anywhere in your app, check the demo app and the file AppDelegate+NotificationsExtension.swift
 * In the function "didReceiveRemoteNotification" ask for the string of the  
 
-     payload let body = userInfo["payload"] as? String ?? ""
+      payload let body = userInfo["payload"] as? String ?? ""
      
 * Then place it in the function buildTheTickets like so:
 
-    ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: body) 
+      ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: body) 
 
 * adding the  
 * 
