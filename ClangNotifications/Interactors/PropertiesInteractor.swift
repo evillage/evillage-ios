@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol PropertiesInteractorProtocol: class {
+protocol PropertiesInteractorProtocol: AnyObject {
   func updateProperties(data: [String: String], completion: @escaping (Error?) -> Void)
 }
 
@@ -16,7 +16,7 @@ class PropertiesInteractor: PropertiesInteractorProtocol {
     enum PropertiesInteractorError: Error {
       case userIdMissing
   }
-  
+
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(PropertiesInteractor.self)"
 

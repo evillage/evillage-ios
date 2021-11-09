@@ -25,7 +25,7 @@ enum APIError: Error {
   case httpError(code: Int)
 }
 
-protocol ServerServiceProtocol: class {
+protocol ServerServiceProtocol: AnyObject {
   /// Perform an RegisterAccount API call that will register this device in the Clang backend
   /// - Parameters:
   ///   - registerAccount: The RegisterAccount object which will be decoded to JSON and added to the body of this request

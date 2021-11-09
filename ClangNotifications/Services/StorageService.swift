@@ -13,7 +13,7 @@ private enum Keychainids {
   static let userId = "clang_user_id"
 }
 
-protocol StorageServiceProtocol: class {
+protocol StorageServiceProtocol: AnyObject {
   func saveUserId(userId: String)
   func loadUserId() -> String?
   func getDeviceId() -> String?

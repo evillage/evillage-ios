@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TokenInteractorProtocol: class {
+protocol TokenInteractorProtocol: AnyObject {
   func sendTokenToServer(firebaseToken: String, completion: @escaping (Error?) -> Void)
 }
 
@@ -16,7 +16,7 @@ class TokenInteractor: TokenInteractorProtocol {
   enum TokenInteractorError: Error {
     case userIdMissing
   }
-  
+
   /// Tag to used in debug prints for easy search in Xcode debug console
   private let logTag = "\(TokenInteractor.self)"
 

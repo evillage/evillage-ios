@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol AccountInteractorProtocol: class {
+protocol AccountInteractorProtocol: AnyObject {
   func registerAccount(fcmToken: String, completion: @escaping (String?, Error?) -> Void)
 }
 

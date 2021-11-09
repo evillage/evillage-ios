@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LogActionInteractorProtocol: class {
+protocol LogActionInteractorProtocol: AnyObject {
   func logNotificationAction(notificationId: String, actionId: String, completion: @escaping (Error?) -> Void)
   func logEvent(event: String, data: [String: String], completion: @escaping (Error?) -> Swift.Void)
 }
