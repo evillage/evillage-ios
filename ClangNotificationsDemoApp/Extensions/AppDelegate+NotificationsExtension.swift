@@ -58,7 +58,7 @@ extension AppDelegate: MessagingDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("AppDelegate+NotificationExtension: Received FCM Token: \(userInfo)")
         
-        let payload = userInfo["payload"] as? String ?? ""
+        let payload = userInfo["cd_payload"] as? String ?? ""
         ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
       
         if Clang().isClangNotification(userInfo: userInfo) {
