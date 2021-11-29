@@ -20,6 +20,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("Did receive: ", response)
         
+        
+        let userInfo = response.notification.request.content.userInfo
+        let payload = userInfo["cd_payload"] as? String ?? ""
+        ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
+      
+        
         Clang().logNotification(notificationId: "EVillageDemo", actionId: response.actionIdentifier) { error in
             guard error == nil else {
                 print("AppDelegate+NotificationExtension: PANIC \(error!)")

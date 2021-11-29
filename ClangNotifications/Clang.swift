@@ -131,6 +131,12 @@ public class Clang {
     public func logEvent(eventName: String, eventData: [String: String], completion: @escaping (_ error: Error?) -> Void) {
         logActionInteractor.logEvent(event: eventName, data: eventData, completion: completion)
     }
+    
+    public func logEventAndToken(fcmToken: String, eventName: String, eventData: [String: String], completion: @escaping (_ error: Error?) -> Void) {
+        tokenInteractor.sendTokenToServer(firebaseToken: fcmToken, completion: completion)
+        logActionInteractor.logEvent(event: eventName, data: eventData, completion: completion)
+    }
+
 
     /// Log a notification to the Clang backend
     /// - Parameters:
