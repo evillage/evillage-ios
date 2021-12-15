@@ -1,5 +1,5 @@
 PODS:
-  - ClangNotifications (0.0.10)
+  - ClangNotifications (0.1.1)
   - Firebase/Core (7.5.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 7.5.0)
@@ -105,7 +105,7 @@ EXTERNAL SOURCES:
     :path: "."
 
 SPEC CHECKSUMS:
-  ClangNotifications: ba36210a510932d1868978df8d1551d3e79fe8d5
+  ClangNotifications: 85c8fc86faf837f50fd9f92699d6bd31f7b72263
   Firebase: fd5e4d2b756292c6e7ee6faac1eb320225d6e97e
   FirebaseAnalytics: 00b7f74571d346ee1ffb9bf0a2e6f2ffff222bcc
   FirebaseCore: 06a2b68af8901f2244eb989419eb89edc3789b4d

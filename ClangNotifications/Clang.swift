@@ -132,6 +132,34 @@ public class Clang {
         logActionInteractor.logEvent(event: eventName, data: eventData, completion: completion)
     }
 
+    /// Log an event to the Clang backend
+    /// - Parameters:
+    ///   - eventName: The name of the event you want to log
+    ///   - eventData: Event date of the event you want to log
+    ///   - data: The data you want to log for this event
+    ///   - completion: The callback after logging the event
+    ///   - error: Optional Error object, If Error is nil then logging the event was successfull
+    public func logEventAndToken(fcmToken: String, eventName: String, eventData: [String: String], completion: @escaping (_ error: Error?) -> Void) {
+        tokenInteractor.sendTokenToServer(firebaseToken: fcmToken, completion: completion)
+        logActionInteractor.logEvent(event: eventName, data: eventData, completion: completion)
+    }
+    
+    /// Log an event to the Clang backend
+    /// - Parameters:
+    ///   - data: The data you want to log for this event
+    ///   - fcmToken: The token we receive from Firebase when registering for push notifications
+    ///   - eventName: The name of the event you want to log
+    ///   - eventData: Event date of the event you want to log
+    ///   - userId: Optional user id String we got when registering. This value be filled when error is nil
+    ///   - completion: The callback after logging the event
+    ///   - error: Optional Error object, If Error is nil then logging the event was successfull
+    public func registerAccountWithProperties(data: [String: String], fcmToken: String, eventName: String, eventData: [String: String], completion: @escaping (_ error: Error?) -> Void) {
+        accountInteractor.registerAccount(fcmToken: fcmToken, completion: {_, _ in })
+        propertiesInteractor.updateProperties(data: data, completion: {_ in })
+        logActionInteractor.logEvent(event: eventName, data: eventData, completion: completion)
+      
+    }
+
     /// Log a notification to the Clang backend
     /// - Parameters:
     ///   - notificationId: The id of the notification
