@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name                 = 'ClangNotifications'
-  spec.version              = '0.1.1'
+  spec.version              = '0.1.2'
   spec.license              = { :type => 'MIT', :file => 'FILE_LICENSE' }
   spec.summary              = 'Clang Library for registering events @ clang env'
   spec.homepage             = 'https://github.com/evillage/evillage-ios'
