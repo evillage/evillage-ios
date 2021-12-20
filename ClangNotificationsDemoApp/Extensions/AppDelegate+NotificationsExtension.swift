@@ -21,19 +21,35 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("Did receive: ", response)
         
         
-        let userInfo = response.notification.request.content.userInfo
-        let payload = userInfo["cd_payload"] as? String ?? ""
-        ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
-      
+     let userInfo = response.notification.request.content.userInfo
         
-        Clang().logNotification(notificationId: "EVillageDemo", actionId: response.actionIdentifier) { error in
-            guard error == nil else {
-                print("AppDelegate+NotificationExtension: PANIC \(error!)")
+      
+        if let messageID = userInfo["gcm.notification.data"] {
+        
+            let jsonString = messageID as? String ?? ""
+            let data: Data? = jsonString.data(using: .utf8)
+            let json = (try? JSONSerialization.jsonObject(with: data!, options: [])) as? [String: AnyObject]
+            let payload = json!["cd_payload"] as? String ?? ""
+            print(payload)
+            ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
+        
+        } else {
+            
+            let payload = userInfo["cd_payload"] as? String ?? ""
+            
+            ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
+            Clang().logNotification(notificationId: "EVillageDemo", actionId: response.actionIdentifier) { error in
+                guard error == nil else {
+                    print("AppDelegate+NotificationExtension: PANIC \(error!)")
+                    return
+                }
+                print("AppDelegate+NotificationExtension: Successfully logged notification")
                 return
             }
-            print("AppDelegate+NotificationExtension: Successfully logged notification")
-            return
+            
         }
+        
+       
         completionHandler()
     }
 }
