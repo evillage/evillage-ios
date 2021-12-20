@@ -40,3 +40,5 @@ Pods/
 .DS_Store
 *.zip
 *.ipa
+.idea
+GoogleService-Info.plist
