@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import ClangNotifications
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     FirebaseApp.configure()
     registerForPushNotifications(application)
     registerNotificationCategories()
+       
+      
     return true
   }
     

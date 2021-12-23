@@ -18,22 +18,40 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     ///   - response: The UNNotificationResponse object
     ///   - completionHandler: The completionHandler that needs to be called if you're done in this method
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("Did receive: ", response)
-        
-        
+
+        /// Remove any badges
+        UIApplication.shared.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber-1
         let userInfo = response.notification.request.content.userInfo
         let payload = userInfo["cd_payload"] as? String ?? ""
-        ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
-      
         
+        /// Build the first tickets (the ticket that the user has selected)
+        ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
         Clang().logNotification(notificationId: "EVillageDemo", actionId: response.actionIdentifier) { error in
             guard error == nil else {
                 print("AppDelegate+NotificationExtension: PANIC \(error!)")
                 return
             }
-            print("AppDelegate+NotificationExtension: Successfully logged notification")
             return
         }
+
+        /// build the next tickets via the UNUserNotificationCenter
+        let center = UNUserNotificationCenter.current()
+        center.getDeliveredNotifications { (notifications) in
+           
+               for item in notifications {
+                   if let messageID = item.request.content.userInfo["cd_payload"] {
+
+                       let payload = messageID as? String ?? ""
+                   
+                       DispatchQueue.main.async {
+                           ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
+                           center.removePendingNotificationRequests(withIdentifiers: [item.request.identifier])
+                       
+                       }
+                   }
+                       
+               }
+           }
         completionHandler()
     }
 }
@@ -62,11 +80,10 @@ extension AppDelegate: MessagingDelegate {
     ///   - userInfo: The payload of the remote notification
     ///   - completionHandler: The block to execute when the download operation is complete
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        print("AppDelegate+NotificationExtension: Received FCM Token: \(userInfo)")
-        
+
         let payload = userInfo["cd_payload"] as? String ?? ""
         ClangFunctions().buildTheTickets(parent: (UIApplication.shared.keyWindow?.rootViewController)!, toAdd: payload)
-      
+
         if Clang().isClangNotification(userInfo: userInfo) {
             do {
                 let notification = try Clang().createNotification(userInfo: userInfo)
@@ -78,6 +95,8 @@ extension AppDelegate: MessagingDelegate {
             }
         }
     }
+    
+    
     /// Firebase messaging delegate for receiving FCM token
     /// - Parameters:
     ///   - messaging: The messaging object from Firebase
@@ -152,4 +171,12 @@ extension AppDelegate {
     func getFirebaseToken() -> String? {
         Messaging.messaging().fcmToken
     }
+}
+struct Root : Decodable {
+    let data: DataClass
+    let notificationType: String
+}
+
+struct DataClass : Decodable {
+    let name, message, operation: String
 }
