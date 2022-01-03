@@ -101,6 +101,23 @@ public class TicketView: UIView, WKUIDelegate, WKNavigationDelegate {
         }
     }
     
+    public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+            if navigationAction.navigationType == .linkActivated  {
+                if let url = navigationAction.request.url,
+                    UIApplication.shared.canOpenURL(url) {
+                    UIApplication.shared.open(url)
+              
+                    decisionHandler(.cancel)
+                } else {
+                    print("Open it locally")
+                    decisionHandler(.allow)
+                }
+            } else {
+                print("not a user click")
+                decisionHandler(.allow)
+            }
+        }
+    
     func movingAll(parant: NSObject) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) { [self] in // Change `2.0` to the desired number of seconds.
