@@ -20,7 +20,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
 
         /// Remove any badges
-        UIApplication.shared.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber-1
+       // UIApplication.shared.applicationIconBadgeNumber = UIApplication.shared.applicationIconBadgeNumber-1
         let userInfo = response.notification.request.content.userInfo
         let payload = userInfo["cd_payload"] as? String ?? ""
         
