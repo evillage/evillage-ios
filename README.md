@@ -22,9 +22,8 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 ### CanopyDeploy library setup ###
 To start using the CanopyDeploy library you need to add some keys and values in your app's info.plist file. Add the following keys and values:
 
-1. BASE_URL
-2. AUTHORIZATION_TOKEN
-3. INTEGRATION_ID
+1. AUTHORIZATION_TOKEN
+2. INTEGRATION_ID
 
 These values will be provided when you contact E-Village to start integrating with the CanopyDeploy platform.
 
