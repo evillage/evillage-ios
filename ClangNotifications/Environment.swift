@@ -15,8 +15,6 @@ public enum Environment {
 
   /// The Info.plist keys we want to retrieve data from
   enum PlistKeys {
-    /// The base url of the API calls
-    static let baseURL = "BASE_URL"
     /// The token we use in the authorization header of the APi calls
     static let authorizationToken = "AUTHORIZATION_TOKEN"
     /// The id we use in the body of the API calls
@@ -36,16 +34,7 @@ public enum Environment {
   // MARK: - Plist values
 
   /// Get the root url from the info.plist found in the integrator's app. If there is no root url set this code will crash
-  static let baseURL: URL = {
-    guard let baseUrl = Environment.infoDictionary[PlistKeys.baseURL] as? String else {
-      fatalError("Base URL not found in info.plist")
-    }
-
-    guard let url = URL(string: baseUrl) else {
-      fatalError("Root URL is invalid")
-    }
-    return url
-  }()
+  static let baseURL: URL = URL(string: "https://api.clang.cloud")!
 
   /// Get the authorization token from the info.plist found in the integrator's app. If there is no Authorization token set this code will crash
   static let authorizationToken: String = {

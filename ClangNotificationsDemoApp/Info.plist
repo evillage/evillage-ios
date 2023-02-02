@@ -4,8 +4,6 @@
 <dict>
 	<key>AUTHORIZATION_TOKEN</key>
 	<string>46b6dfb6-d5fe-47b1-b4a2-b92cbb30f0a5</string>
-	<key>BASE_URL</key>
-	<string>https://api.clang.cloud</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
