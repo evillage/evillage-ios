@@ -27,6 +27,10 @@ class MainViewController: UIViewController {
     if CLLocationManager.authorizationStatus() == .authorizedWhenInUse || CLLocationManager.authorizationStatus() == .authorizedAlways {
       locationManager.requestLocation()
     }
+    
+    
+      Environment.integrationId = "INTEGRATION_ID provided"
+      Environment.authorizationToken = "AUTHORIZATION_TOKEN provided"
   }
     
     @IBAction func buildTicket(_ sender: UIButton) {
