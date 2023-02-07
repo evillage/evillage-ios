@@ -20,12 +20,7 @@ App is written in Swift, uses Firebase cloud messaging for notifications.
 * Run the app on simulator or connect an IOS device (supported IOS is 12 and 13). Remember push notifications won't work on the simulator.
 
 ### CanopyDeploy library setup ###
-To start using the CanopyDeploy library you need to add some keys and values in your app's info.plist file. Add the following keys and values:
-
-1. AUTHORIZATION_TOKEN
-2. INTEGRATION_ID
-
-These values will be provided when you contact E-Village to start integrating with the CanopyDeploy platform.
+To start using the CanopyDeploy library you need to set the keys "authorizationToken" and "integrationId" via Environment. These values will be provided when you contact E-Village to start integrating with the CanopyDeploy platform.
 
 ### Create a new version on Cocoapods
 Cocoapods used the tag system of bitbucket to specifcy which version is being used. When you want to create a new version of the ClangNotifications pod
