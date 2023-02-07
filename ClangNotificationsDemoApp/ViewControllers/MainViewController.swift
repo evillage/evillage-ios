@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
       locationManager.requestLocation()
     }
     
-    
+    //To start using the CanopyDeploy library you need to set the keys "authorizationToken" and "integrationId" via Environment. 
       Environment.integrationId = "INTEGRATION_ID provided"
       Environment.authorizationToken = "AUTHORIZATION_TOKEN provided"
   }
