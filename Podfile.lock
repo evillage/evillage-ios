@@ -1,5 +1,5 @@
 PODS:
-  - ClangNotifications (0.1.8)
+  - ClangNotifications (0.1.9)
   - Firebase/Core (7.5.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 7.5.0)
