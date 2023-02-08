@@ -16,8 +16,8 @@ public enum Environment {
     /// Ready  set url
     static let baseURL: URL = URL(string: "https://api.clang.cloud")!
     /// Public authorizationToken provided.  If there is no Authorization token set this code will crash
-    public static let authorizationToken: String = ""
+    public static var authorizationToken: String = ""
     /// Public integrationId provided. If there is no integration id set this code will crash
-    public static let integrationId: String = ""
+    public static var integrationId: String = ""
 
 }
