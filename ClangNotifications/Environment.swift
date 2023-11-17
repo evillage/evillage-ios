@@ -20,4 +20,12 @@ public enum Environment {
     /// Public integrationId provided. If there is no integration id set this code will crash
     public static var integrationId: String = ""
 
+    public static func setAuthorizationToken(_ token: String) {
+        authorizationToken = token
+    }
+
+    public static func setIntegrationId(_ id: String) {
+        integrationId = id
+    }
+
 }
