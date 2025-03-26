@@ -36,6 +36,10 @@ Pods/
 # Jazzy docs
 # docs/
 
+# Swift Package Manager
+.build
+.swiftpm
+
 # Other
 .DS_Store
 *.zip
